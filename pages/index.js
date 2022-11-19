@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import solidity from "../public/images/solidity.png";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        {/*  justify-between 将子元素左右充满 */}
         <div className="justify-between  w-[54rem] m-auto">
           <div className=" font-bold text-2xl mt-6 inline-block h-10 w-52 text-center rounded-md pt-1 bg-purple-500">
             LOGO 在此
@@ -32,11 +34,20 @@ export default function Home() {
           <div className=" h-[12.5rem]  w-[52rem] m-auto text-center bg-fuchsia-300 font-mono text-white font-bold text-xl">
             这是一场社会实验
           </div>
+          <div className="w-[52rem]  mt-8 m-auto">
+            <Image className=" m-auto" src={solidity}></Image>
+          </div>
           <div className=" h-[12.5rem] w-[52rem]  mt-8 m-auto text-center bg-sky-300 font-mono text-white font-bold text-xl">
             这是一场社会实验
           </div>
+          <div className="w-[52rem]  mt-8 m-auto">
+            <Image className=" m-auto" src={solidity}></Image>
+          </div>
           <div className=" h-[12.5rem] w-[52rem] mt-8 m-auto text-center bg-amber-200 font-mono text-white font-bold text-xl">
             这是一场社会实验
+          </div>
+          <div className="w-[52rem]  mt-8 m-auto">
+            <Image className=" m-auto" src={solidity}></Image>
           </div>
           <div className=" h-[12.5rem] w-[52rem] mt-8 m-auto text-center bg-rose-200 font-mono text-white font-bold text-xl">
             这是一场社会实验
