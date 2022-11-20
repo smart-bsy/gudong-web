@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import card1 from "../public/images/card1.png";
-import card2 from "../public/images/card2.png";
-import card3 from "../public/images/card3.png";
-import card4 from "../public/images/card4.png";
-import card5 from "../public/images/card5.png";
+import card1 from "../public/images/card1.jpg";
+import card2 from "../public/images/card2.jpg";
+import card3 from "../public/images/card3.jpg";
+import card4 from "../public/images/card4.jpg";
+import card5 from "../public/images/card5.jpg";
 
 export default function Home() {
   return (
