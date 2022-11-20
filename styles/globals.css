@@ -1,12 +1,14 @@
-html,
 body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-image: url("/images/bg1.jpg");
+  background-image: linear-gradient(
+    135deg,
+    #15054e,
+    #240553,
+    #2d0659,
+    #310553,
+    #2d0442,
+    #2b0a4d,
+    #1a043c
+  );
 }
 @tailwind base;
 @tailwind components;
