@@ -31,26 +31,29 @@ export default function Home() {
         <div>
           <div>
             <Image
-              className=" w-[50rem] m-auto drop-shadow-4xl"
+              className=" w-[50rem] m-auto drop-shadow-4xl rounded-2xl"
               src={card1}
             ></Image>
           </div>
           <div className=" w-[50rem] mt-5 m-auto">
             <Image
-              className=" inline-block align-top  drop-shadow-3xl float-left"
+              className=" inline-block align-top rounded-2xl  drop-shadow-3xl float-left"
               src={card2}
             ></Image>
             <Image
-              className=" inline-block align-top h-[27.5rem] w-[26rem] drop-shadow-4xl float-right"
+              className=" inline-block align-top rounded-2xl h-[27.5rem] w-[26rem] drop-shadow-4xl float-right"
               src={card3}
             ></Image>
           </div>
           <div className=" clear-both"></div>
           <div className=" w-[50rem] m-auto mt-5">
-            <Image src={card4} className="drop-shadow-4xl"></Image>
+            <Image src={card4} className="drop-shadow-4xl rounded-2xl"></Image>
           </div>
           <div className=" w-[50rem] m-auto mt-5 mb-5">
-            <Image src={card5} className=" drop-shadow-4xl w-[50rem]"></Image>
+            <Image
+              src={card5}
+              className=" rounded-2xl drop-shadow-4xl w-[50rem]"
+            ></Image>
           </div>
         </div>
       </div>
