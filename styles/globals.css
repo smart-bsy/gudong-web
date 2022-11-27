@@ -1,14 +1,5 @@
 body {
-  background-image: linear-gradient(
-    135deg,
-    #15054e,
-    #240553,
-    #2d0659,
-    #310553,
-    #2d0442,
-    #2b0a4d,
-    #1a043c
-  );
+  background-image: url("/images/gudong-bg.jpg");
 }
 @tailwind base;
 @tailwind components;
