@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import computer from "../public/images/computer.png";
 import huojian from "../public/images/huojian.png";
-import bin from "../public/images/bin.jpg";
 export default function Home() {
   return (
     <div>
@@ -27,11 +26,16 @@ export default function Home() {
             style={{ "background-color": "rgba(254,226,226,0.3)" }}
             className=" flex flex-row justify-between items-center mt-10 shadow-2xl  rounded-md"
           >
-            <div className=" ml-6 w-96  rounded-md text-center  font-bold text-white font-mono text-xl">
-              <p>这是一场真实的社会实验</p>
-              <p>
-                <span className=" text-red-500">中国</span>
-                将出现一个全新的电子商务平台
+            <div className=" ml-6 w-96  rounded-md text-center  font-bold text-white">
+              <p className=" text-2xl">
+                这是一场<span className=" text-3xl text-red-900"> 真实的 </span>
+                社会实验
+              </p>
+              <p className=" mt-5 ml-16 text-base-b">
+                <span>中国</span>
+                将出现一个
+                <span className=" text-2xl text-blue-800"> 全新的 </span>
+                电子商务平台
               </p>
             </div>
             <Image className=" w-96 mr-6 " src={computer} alt="fdsafsd"></Image>
@@ -41,33 +45,79 @@ export default function Home() {
             className=" rounded-md flex flex-row justify-between  shadow-2xl items-center  mt-10"
           >
             <Image className=" w-96 ml-6" src={computer} alt="fdsafsd"></Image>
-            <div className=" mr-6 w-96 text-center  rounded-md text-white font-bold text-xl">
-              <p>这个平台的名字叫“咕咚” </p>
-              <p>主营年轻人的消费品</p>
-              <p> 但有一点不一样</p>
-              <p>咕咚平台会记录每一位用户</p>
-              <p>在咕咚所做的贡献</p>
-              <p>例如，您为咕咚邀请来好友</p>
-              <p>或者，您在咕咚平台买卖商品</p>
-              <p>皆是为咕咚做出了贡献</p>
-              <p>咕咚将把这些贡献</p>
-              <p>直接转化成咕咚的股份(未来的股票) </p>
-              <p>免费赠送于您</p>
+            <div className=" mr-6 w-96 text-center  rounded-md text-white font-bold text-base my-5">
+              <div className=" -ml-[17rem]">
+                <p>
+                  这个平台的名字叫
+                  <span className=" text-indigo-700 text-xl"> 咕咚</span>
+                </p>
+                <p>
+                  主营
+                  <span className=" text-xl text-indigo-700"> 年轻人 </span>
+                  的消费品
+                </p>
+                <p>但有一点不一样</p>
+                <p>咕咚平台会记录每一位用户</p>
+                <p className=" mb-6">
+                  在咕咚所做的
+                  <span className=" text-xl text-indigo-700"> 贡献</span>
+                </p>
+              </div>
+              <div className=" ml-[8rem]">
+                <p>
+                  例如，您为咕咚
+                  <span className=" text-xl text-indigo-700"> 邀请 </span>
+                  来好友
+                </p>
+                <p>
+                  或者，您在咕咚平台
+                  <span className=" text-xl text-indigo-700"> 买卖 </span>
+                  商品
+                </p>
+                <p>皆是为咕咚做出了贡献</p>
+                <p>咕咚将把这些贡献</p>
+                <p>
+                  直接转化成咕咚的
+                  <span className=" text-xl text-indigo-700"> 股份</span>
+                </p>
+                <p>
+                  <span className=" text-xl text-indigo-700"> 免费 </span>
+                  赠送于您
+                </p>
+              </div>
             </div>
           </div>
           <div
             style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md flex flex-row justify-between items-center shadow-2xl  mt-10"
+            className=" rounded-md flex flex-row justify-between items-center shadow-xl  mt-10"
           >
-            <div className=" mr-6 w-96 text-center rounded-md text-white font-bold text-xl">
-              <p>咕咚平台有可能</p>
-              <p>在未来5年内</p>
+            <div className=" mr-6 w-96 text-center rounded-md text-white font-bold text-base">
+              <p>
+                <span className=" text-xl text-indigo-700"> 咕咚 </span>
+                平台有可能
+              </p>
+              <p>
+                在未来
+                <span className=" text-xl text-indigo-700"> 5年内</span>
+              </p>
               <p>超越阿里巴巴</p>
-              <p>甚至超越亚马逊</p>
-              <p>也就是，市值将达万亿以上</p>
+              <p>
+                甚至
+                <span className=" text-xl text-indigo-700"> 超越 </span>
+                亚马逊
+              </p>
+              <p>
+                也就是，市值将达
+                <span className=" text-xl text-indigo-700"> 万亿 </span>
+                以上
+              </p>
               <p>（咕咚的股份总量1亿股）</p>
-              <p>也就是，未来每股的价值</p>
-              <p>将达万元以上</p>
+              <p className=" mt-5">也就是，未来每股的价值</p>
+              <p>
+                将达
+                <span className=" text-xl text-indigo-700"> 万元 </span>
+                以上
+              </p>
               <p>也许您会觉得不可能</p>
               <p>但万一呢？</p>
             </div>
@@ -75,11 +125,16 @@ export default function Home() {
           </div>
           <div
             style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md flex flex-row justify-between items-center shadow-2xl  mt-10"
+            className=" rounded-md flex flex-row justify-between items-center shadow-base  mt-10"
           >
-            <Image className=" w-96 ml-6" src={bin} alt="fdsafsd"></Image>
-            <div className=" mr-6 w-96 rounded-md text-white font-bold text-xl">
-              咕咚小程序/APP产品正在同步开发中，待产品上线后，咕咚的股份将以“积分”的形式显示在咕咚小程序及APP产品上，本“积分”发行总量为1亿份（永无增发），其中咕咚创始团队仅持有10%，28%预留给投资机构及团队后续扩员，2%免费空投给最早来到这里的1万名种子用户，剩余60%将分阶段、分批次免费赠予全生态用户！早来者会获得多一些，晚来者会获得少一些。
+            <Image className=" w-96 ml-6" src={computer} alt="fdsafsd"></Image>
+            <div className=" mr-6 w-96 rounded-md text-white font-bold">
+              <p>
+                咕咚小程序/APP产品正在同步开发中，待产品上线后，咕咚的股份将以“积分”的形式显示在咕咚小程序及APP产品上。
+              </p>
+              <p className=" mt-5">
+                本“积分”发行总量为1亿份（永无增发），其中咕咚创始团队仅持有10%，28%预留给投资机构及团队后续扩员，2%免费空投给最早来到这里的1万名种子用户，剩余60%将分阶段、分批次免费赠予全生态用户！早来者会获得多一些，晚来者会获得少一些。
+              </p>
             </div>
           </div>
           <div

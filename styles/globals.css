@@ -1,5 +1,6 @@
 body {
   background-image: url("/images/gudong-bg.jpg");
+  background-attachment: fixed;
 }
 @tailwind base;
 @tailwind components;
