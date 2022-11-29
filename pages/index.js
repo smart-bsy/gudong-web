@@ -2,10 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import computer from "../public/images/computer.png";
 import huojian from "../public/images/huojian.png";
+import logo from "../public/images/logo.png";
 import code from "../public/images/code.png";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { Upload } from "antd";
 import { useState } from "react";
+import styles from "../styles/Home.module.css";
+
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
@@ -59,7 +62,8 @@ export default function Home() {
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
         {/* <div className=" fixed mb-10 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 h-20"> */}
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between">
-          <img src="https://uploads-ssl.webflow.com/61ba26b76e77f36c0ba7d282/630a6f96aba04eaff0abcaff_animedollarmascot.webp"></img>
+          {/* <img src="https://uploads-ssl.webflow.com/61ba26b76e77f36c0ba7d282/630a6f96aba04eaff0abcaff_animedollarmascot.webp"></img> */}
+          <Image className=" w-48 my-5 mx-10" src={logo} alt="logo"></Image>
           <div className=" inline-flex items-center justify-around w-28 md:w-96 text-white font-mono font-bold mr-2">
             <a>登录</a>
             <a>账号</a>
@@ -67,648 +71,643 @@ export default function Home() {
           </div>
           {/* </div> */}
         </div>
-        {/* <div className=" h-[11rem]"></div> */}
         <div className=" md:w-3/4 clear-both flex flex-col  w-[54rem] m-auto">
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" flex flex-row justify-between items-center mt-10 shadow-2xl  rounded-md"
-          >
-            <div className="  ml-6 w-96  rounded-md text-center  font-bold text-white">
-              <p className=" text-2xl">
-                这是一场<span className=" text-3xl text-red-900"> 真实的 </span>
-                社会实验
-              </p>
-              <p className=" mt-5 ml-16 text-base-b">
-                <span>中国</span>
-                将出现一个
-                <span className=" text-2xl text-blue-800"> 全新的 </span>
-                电子商务平台
-              </p>
-            </div>
-            <Image
-              className=" md:w-5/12 w-96 mr-6 shrink-0"
-              src={computer}
-              alt="fdsafsd"
-            ></Image>
-          </div>
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md flex flex-row justify-between  shadow-2xl items-center  mt-10"
-          >
-            <Image className=" w-96 ml-6" src={computer} alt="fdsafsd"></Image>
-            <div className=" mr-6 w-96 text-center  rounded-md text-white font-bold text-base my-5">
-              <div className=" -ml-[17rem]">
-                <p>
-                  这个平台的名字叫
-                  <span className=" text-indigo-700 text-xl"> 咕咚</span>
-                </p>
-                <p>
-                  主营
-                  <span className=" text-xl text-indigo-700"> 年轻人 </span>
-                  的消费品
-                </p>
-                <p>但有一点不一样</p>
-                <p>咕咚平台会记录每一位用户</p>
-                <p className=" mb-6">
-                  在咕咚所做的
-                  <span className=" text-xl text-indigo-700"> 贡献</span>
-                </p>
-              </div>
-              <div className=" ml-[8rem]">
-                <p>
-                  例如，您为咕咚
-                  <span className=" text-xl text-indigo-700"> 邀请 </span>
-                  来好友
-                </p>
-                <p>
-                  或者，您在咕咚平台
-                  <span className=" text-xl text-indigo-700"> 买卖 </span>
-                  商品
-                </p>
-                <p>皆是为咕咚做出了贡献</p>
-                <p>咕咚将把这些贡献</p>
-                <p>
-                  直接转化成咕咚的
-                  <span className=" text-xl text-indigo-700"> 股份</span>
-                </p>
-                <p>
-                  <span className=" text-xl text-indigo-700"> 免费 </span>
-                  赠送于您
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md flex flex-row justify-between items-center shadow-xl  mt-10"
-          >
-            <div className=" mr-6 w-96 text-center rounded-md text-white font-bold text-base">
-              <p>
-                <span className=" text-xl text-indigo-700"> 咕咚 </span>
-                平台有可能
-              </p>
-              <p>
-                在未来
-                <span className=" text-xl text-indigo-700"> 5年内</span>
-              </p>
-              <p>超越阿里巴巴</p>
-              <p>
-                甚至
-                <span className=" text-xl text-indigo-700"> 超越 </span>
-                亚马逊
-              </p>
-              <p>
-                也就是，市值将达
-                <span className=" text-xl text-indigo-700"> 万亿 </span>
-                以上
-              </p>
-              <p>（咕咚的股份总量1亿股）</p>
-              <p className=" mt-5">也就是，未来每股的价值</p>
-              <p>
-                将达
-                <span className=" text-xl text-indigo-700"> 万元 </span>
-                以上
-              </p>
-              <p>也许您会觉得不可能</p>
-              <p>但万一呢？</p>
-            </div>
-            <Image className=" w-96 mr-6" src={huojian} alt="fdsafsd"></Image>
-          </div>
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md flex flex-row justify-between items-center shadow-base  mt-10"
-          >
-            <Image className=" w-96 ml-6" src={computer} alt="fdsafsd"></Image>
-            <div className=" mr-6 w-96 rounded-md text-white font-bold my-5">
-              <p>
-                咕咚小程序/APP产品正在同步
-                <span className=" text-xl text-indigo-700"> 开发中 </span>
-                ，待产品上线后，咕咚的股份将以
-                <span className=" text-xl text-indigo-700"> 积分 </span>
-                的形式显示在咕咚小程序及APP产品上。
-              </p>
-              <p className=" mt-5">
-                本“积分”发行总量为
-                <span className=" text-xl text-indigo-700"> 1亿份 </span>
-                (永无增发)，其中咕咚创始团队仅持有
-                <span className=" text-indigo-700">10%</span>
-                ，预留
-                <span className=" text-indigo-700 ">28%</span>
-                给投资机构及团队后续扩员，
-                <span className=" text-indigo-700 ">2%</span>
-                免费空投给最早来到这里的
-                <span className=" text-xl text-indigo-700"> 1万名 </span>
-                种子用户，剩余
-                <span className=" text-indigo-700 ">60%</span>
-                将分阶段、分批次免费赠予
-                <span className=" text-xl text-indigo-700"> 全生态用户 </span>
-                早来者会获得多一些，晚来者会获得少一些。
-              </p>
-            </div>
-          </div>
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" mt-10 shadow-2xl  rounded-md"
-          >
-            <div className=" p-2 mr-6 w-full rounded-md text-white font-bold text-base">
-              <p>
-                在此阶段，咕咚将2%的原始股份（200万股）免费空投给最早来到这里的1万名参与者（每人最多200股）
-              </p>
-              <p>申请方式如下：</p>
-              <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
-                <div>
-                  1、请完成以下信息
-                  <span className=" font-bold text-indigo-800">（+50股）</span>
+          <div className=" mt-5 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" md:ml-6 md:w-96 mt-5 text-center font-bold text-white">
+                  <p className=" text-3xl">这是一场真实的社会实验</p>
+                  <p className=" text-xl mt-5 ">
+                    中国将出现一个全新的电子商务平台
+                  </p>
                 </div>
-                <div>
-                  <form action="">
-                    <div
-                      style={{
-                        "background-color": "rgba(254,226,226,0.3)",
-                      }}
-                      className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
+                <Image
+                  className=" md:w-5/12 w-3/4 md:mr-6 shrink-0"
+                  src={computer}
+                  alt="fdsafsd"
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" mr-6 w-96 text-center  rounded-md text-white font-bold text-base my-5">
+                  <div className=" text-start">
+                    <p>这个平台的名字叫“咕咚”！主营年轻人的消费品</p>
+                    <p>但有一点不一样，咕咚平台会记录每一位用</p>
+                    <p>户在咕咚所做的贡献。 </p>
+                  </div>
+                  <div className=" text-start">
+                    <p>
+                      例如：您为咕咚邀请来好友或者，您在咕咚平台
+                      买卖商品，皆是为咕咚做出了贡献，咕咚将把这
+                      些贡献直接转化成咕咚的股份，免费赠送于您。{" "}
+                    </p>
+                  </div>
+                </div>
+                <Image
+                  className=" w-96 ml-6"
+                  src={computer}
+                  alt="fdsafsd"
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" mr-6 w-96 text-center rounded-md text-white font-bold text-base">
+                  <p>
+                    咕咚平台有可能在未来5年内超越阿里巴巴，甚至超越亚马逊，也就是市值将达万亿以上
+                    (咕咚的股份总量1亿股)
+                    ，也就是，未来每股的价值将达万元以上，也许您会觉得不可能，但万一呢？{" "}
+                  </p>
+                </div>
+                <Image
+                  className=" w-96 md:mr-6"
+                  src={huojian}
+                  alt="fdsafsd"
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" mr-6 w-96 rounded-md text-white font-bold my-5">
+                  <p>
+                    咕咚小程序/APP产品正在同步开发中，待产品上线后，咕咚的股份将以“积分”的形式显示在咕咚小程序及APP产品上。
+                  </p>
+                  <p>
+                    本“积分”发行总量为1亿份（永无增发），其中咕咚创始团队仅持有10%，28%预留给投资机构及团队后续扩员，2%免费空投给最早来到这里的1万名种子用户，剩余60%将分阶段、分批次免费赠予全生态用户！早来者会获得多一些，晚来者会获得少一些。{" "}
+                  </p>
+                </div>
+                <Image
+                  className=" w-96 ml-6"
+                  src={computer}
+                  alt="fdsafsd"
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" p-2 mr-6 w-full rounded-md text-white font-bold text-base">
+                  <p>
+                    在此阶段，咕咚将2%的原始股份（200万股）免费空投给最早来到这里的1万名参与者（每人最多200股）
+                  </p>
+                  <p>申请方式如下：</p>
+                  <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
+                    <div>
+                      1、请完成以下信息
+                      <span className=" font-bold text-indigo-800">
+                        （+50股）
+                      </span>
+                    </div>
+                    <div>
+                      <form action="">
+                        <div
+                          style={{
+                            "background-color": "rgba(254,226,226,0.3)",
+                          }}
+                          className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
+                        >
+                          <label className=" block">
+                            咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
+                          </label>
+                          <div className=" text-left mt-3">
+                            <input
+                              className=" text-2xl ml-2"
+                              type="radio"
+                              name="sex"
+                              value="male"
+                            />
+                            <span className="text-base mr-16 px-3">买家</span>
+                            <input
+                              className=" text-2xl"
+                              type="radio"
+                              name="sex"
+                              value="female"
+                            />
+                            <span className=" text-base px-3">卖家</span>
+                            <button
+                              onClick={(event) => {
+                                event.preventDefault();
+                              }}
+                              className=" ml-3 block bg-indigo-600 px-3 py-1 mt-2 shadow-2xl rounded-md font-bold text-white"
+                            >
+                              提交
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div className=" mt-5 border-b-2 border-gray-400 pb-5 border-dashed">
+                    <div>
+                      2、请完成以下分享
+                      <span className=" font-bold text-indigo-800">
+                        （+50股）
+                      </span>
+                    </div>
+                    <div>
+                      <form action="">
+                        <div>
+                          <label className=" block">
+                            <p>
+                              请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
+                            </p>
+                            <div
+                              style={{
+                                "background-color": "rgba(254,226,226,0.3)",
+                              }}
+                              className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
+                            >
+                              <p>
+                                一个即将打破阿里/京东等巨头垄断的新电商平台
+                                (“咕咚”)
+                                即将面世！人人皆可免费入股！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
+                                <a
+                                  href="https://www.gudong.shop/"
+                                  className=" text-blue-500 underline-offset-1"
+                                >
+                                  https://www.gudong.shop/
+                                </a>
+                                <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                                  <svg
+                                    t="1669548772173"
+                                    class="icon"
+                                    viewBox="0 0 1024 1024"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    p-id="3657"
+                                    width="20"
+                                    height="20"
+                                    className="inline"
+                                  >
+                                    <path
+                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
+                                      p-id="3658"
+                                      fill="#ffffff"
+                                    ></path>
+                                    <path
+                                      d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
+                                      p-id="3659"
+                                      fill="#ffffff"
+                                    ></path>
+                                  </svg>
+                                  <span>复制</span>
+                                </button>
+                              </p>
+                            </div>
+                            <div>
+                              <Upload
+                                name="avatar"
+                                listType="picture-card"
+                                className="avatar-uploader mt-5 ml-3"
+                                showUploadList={false}
+                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                beforeUpload={beforeUpload}
+                                onChange={handleChange}
+                              >
+                                {imageUrl ? (
+                                  <img src={imageUrl} alt="avatar" />
+                                ) : (
+                                  uploadButton
+                                )}
+                              </Upload>
+                            </div>
+                            <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                              上传截图
+                            </button>
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div className=" mt-5 pb-5 ">
+                    <div>
+                      3、请完成以下分享
+                      <span className=" font-bold text-indigo-800">
+                        （+100股）
+                      </span>
+                    </div>
+                    <div>
+                      <form action="">
+                        <div>
+                          <label className=" block">
+                            <p>
+                              请将以下内容分享至3个以上微信群，总人数达1000人以上并截图上传。
+                            </p>
+                            <div
+                              style={{
+                                "background-color": "rgba(254,226,226,0.3)",
+                              }}
+                              className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
+                            >
+                              <p>
+                                一个即将打破阿里/京东等巨头垄断的新电商平台
+                                (“咕咚”)
+                                将于X日X点正式上线！人人皆可免费入股！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
+                                <a
+                                  href="https://www.gudong.shop/"
+                                  className=" text-blue-500 underline-offset-1"
+                                >
+                                  https://www.gudong.shop/指定位置/
+                                </a>
+                                <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                                  <svg
+                                    t="1669548772173"
+                                    class="icon"
+                                    viewBox="0 0 1024 1024"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    p-id="3657"
+                                    width="20"
+                                    height="20"
+                                    className="inline"
+                                  >
+                                    <path
+                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
+                                      p-id="3658"
+                                      fill="#ffffff"
+                                    ></path>
+                                    <path
+                                      d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
+                                      p-id="3659"
+                                      fill="#ffffff"
+                                    ></path>
+                                  </svg>
+                                  <span>复制</span>
+                                </button>
+                              </p>
+                            </div>
+                            <div>
+                              <Upload
+                                name="avatar"
+                                listType="picture-card"
+                                className="avatar-uploader mt-5 ml-3"
+                                showUploadList={false}
+                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                beforeUpload={beforeUpload}
+                                onChange={handleChange}
+                              >
+                                {imageUrl ? (
+                                  <img src={imageUrl} alt="avatar" />
+                                ) : (
+                                  uploadButton
+                                )}
+                              </Upload>
+                            </div>
+                            <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                              上传截图
+                            </button>
+                          </label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <p className=" text-xl font-bold text-white">
+                  Q&A 常见问题解答
+                </p>
+                <div className="  mt-3">
+                  <p className=" font-bold">Q: 本平台主营什么商品?</p>
+                  <p className=" mt-1 ">
+                    A:
+                    本平台上线后将主营年轻人的消费品，如盲盒、手办、潮玩、服饰、化妆品等。
+                  </p>
+                </div>
+                <div className="  mt-3 ">
+                  <p className=" font-bold">Q: 本平台股份有何用途?</p>
+                  <p className=" mt-1 ">
+                    <span>A:</span>
+                    本平台在此谈及的“股份”属于真正意义上的原始股，待平台小程序/APP上线后将以“积分”的形式显示在平台上，该“积分”将赋予以下五项功能和用户权益：
+                  </p>
+                  <ol>
+                    <li>
+                      1.
+                      本平台未来上市后，持有该“积分”可直接按同等比例换算成平台的股票;
+                    </li>
+                    <li>
+                      2.
+                      本平台实现盈利后，持有该“积分”者皆可获得永久性分红（当前预设为按年/季/月/周/日进行）;
+                    </li>
+                    <li>
+                      3.
+                      为了合规起见，本平台仅会开通股份“转赠”功能以支持用户间线下交易;
+                    </li>
+                    <li>
+                      4.
+                      如果本平台上的卖家选择开通【“积分”支付】，则买家即可使用“积分”消费该卖家的商品，而本平台也会接受卖家使用“积分”抵扣交易佣金和广告费等;
+                    </li>
+                    <li>
+                      5.
+                      持有该“积分”的用户即可参加本平台在中后期发展过程中的在线化治理（如：发表提案和参与投票等）。
+                    </li>
+                  </ol>
+                </div>
+                <div className="  mt-3">
+                  <p className=" font-bold">Q: 本平台如何获得盈利?</p>
+                  <p className=" mt-1 ">
+                    A:
+                    本平台属于一个轻模式、轻运营的第三方服务商，专注为经营新潮商品的供应商和年轻的消费者群体提供精细化的服务，从中收取适当比例的服务费用，以及平台广告费等，与淘宝、京东、拼多多等平台无异。
+                  </p>
+                </div>
+                <div className="  mt-3">
+                  <p className=" font-bold">Q: 本平台“积分”如何释放?</p>
+                  <p className=" mt-1 ">
+                    A:
+                    本平台“积分”共有62%（6200万份）免费奖励给全生态用户，其中除了2%（200万份）提前奖励给最早期的1万名用户之外，余下的60%（6000万份）将均分三份，按阶段释放给全生态用户，主要奖励用户【注册/拉新】和【购物/售货】，具体分配细则详见平台上线后附带文档
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <ol className="relative border-l ml-10 mt-5 border-gray-200 dark:border-gray-700">
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      官网推出并空投
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      小程序/app上线
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      小程序/app上线
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      盈利并开始分红
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      治理性NFT发布
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      在线化社区治理
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                      进入到上市程序
+                    </h3>
+                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                      Get access to over 20+ pages including a dashboard layout,
+                      charts, kanban board, calendar, and pre-order E-commerce &
+                      Marketing pages.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" ml-5 font-bold text-xl">
+                  联系方式
+                  <div className=" mt-1 text-base font-bold">
+                    <svg
+                      t="1669554731645"
+                      className=" inline-block icon mr-2"
+                      viewBox="0 0 1206 1024"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      p-id="6738"
+                      width="20"
+                      height="20"
                     >
-                      <label className=" block">
-                        咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
-                      </label>
-                      <div className=" text-left mt-3">
-                        <input
-                          className=" text-2xl ml-2"
-                          type="radio"
-                          name="sex"
-                          value="male"
-                        />
-                        <span className="text-base mr-16 px-3">买家</span>
-                        <input
-                          className=" text-2xl"
-                          type="radio"
-                          name="sex"
-                          value="female"
-                        />
-                        <span className=" text-base px-3">卖家</span>
-                        <button
-                          onClick={(event) => {
-                            event.preventDefault();
-                          }}
-                          className=" ml-3 block bg-indigo-600 px-3 py-1 mt-2 shadow-2xl rounded-md font-bold text-white"
-                        >
-                          提交
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div className=" mt-5 border-b-2 border-gray-400 pb-5 border-dashed">
-                <div>
-                  2、请完成以下分享
-                  <span className=" font-bold text-indigo-800">（+50股）</span>
+                      <path
+                        d="M982.749557 0.001605H223.417832A224.340714 224.340714 0 0 0 0 222.536679v578.888121a224.340714 224.340714 0 0 0 223.417832 222.535075h759.331725a224.340714 224.340714 0 0 0 223.417831-222.535075V222.536679A222.615325 222.615325 0 0 0 982.749557 0.001605zM223.417832 88.758833h759.331725a132.413586 132.413586 0 0 1 114.357187 64.922782l-437.366085 353.704775a88.275724 88.275724 0 0 1-111.708916 0L110.665657 153.681615a128.722055 128.722055 0 0 1 112.752175-64.922782z m759.331725 845.159803H223.417832a134.540228 134.540228 0 0 1-134.299476-133.777846V253.031929l401.614417 324.573786a177.434205 177.434205 0 0 0 111.708916 39.724076 174.745808 174.745808 0 0 0 111.708916-39.724076l401.614417-324.573786v547.108861a131.731455 131.731455 0 0 1-133.015465 133.777846z"
+                        p-id="6739"
+                        fill="#f4ea2a"
+                      ></path>
+                    </svg>
+                    123456789@qq.com
+                  </div>
                 </div>
                 <div>
-                  <form action="">
+                  <p className=" ml-5 font-bold text-xl mt-3">加入社群</p>
+                  <div className=" flex flex-row justify-start  mt-3 items-center">
                     <div>
-                      <label className=" block">
-                        <p>
-                          请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
-                        </p>
-                        <div
-                          style={{
-                            "background-color": "rgba(254,226,226,0.3)",
-                          }}
-                          className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
-                        >
-                          <p>
-                            一个即将打破阿里/京东等巨头垄断的新电商平台 (“咕咚”)
-                            即将面世！人人皆可免费入股！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
-                            <a
-                              href="https://www.gudong.shop/"
-                              className=" text-blue-500 underline-offset-1"
-                            >
-                              https://www.gudong.shop/
-                            </a>
-                            <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                              <svg
-                                t="1669548772173"
-                                class="icon"
-                                viewBox="0 0 1024 1024"
-                                version="1.1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                p-id="3657"
-                                width="20"
-                                height="20"
-                                className="inline"
-                              >
-                                <path
-                                  d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
-                                  p-id="3658"
-                                  fill="#ffffff"
-                                ></path>
-                                <path
-                                  d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
-                                  p-id="3659"
-                                  fill="#ffffff"
-                                ></path>
-                              </svg>
-                              <span>复制</span>
-                            </button>
-                          </p>
-                        </div>
-                        <div>
-                          <Upload
-                            name="avatar"
-                            listType="picture-card"
-                            className="avatar-uploader mt-5 ml-3"
-                            showUploadList={false}
-                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                            beforeUpload={beforeUpload}
-                            onChange={handleChange}
-                          >
-                            {imageUrl ? (
-                              <img src={imageUrl} alt="avatar" />
-                            ) : (
-                              uploadButton
-                            )}
-                          </Upload>
-                        </div>
-                        <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                          上传截图
-                        </button>
-                      </label>
+                      <Image
+                        className=" mx-5 w-20 rounded-md"
+                        src={code}
+                        alt="code"
+                      ></Image>
+                      <p className=" text-center mt-1">微信①群</p>
                     </div>
-                  </form>
-                </div>
-              </div>
-              <div className=" mt-5 pb-5 ">
-                <div>
-                  3、请完成以下分享
-                  <span className=" font-bold text-indigo-800">（+100股）</span>
-                </div>
-                <div>
-                  <form action="">
                     <div>
-                      <label className=" block">
-                        <p>
-                          请将以下内容分享至3个以上微信群，总人数达1000人以上并截图上传。
-                        </p>
-                        <div
-                          style={{
-                            "background-color": "rgba(254,226,226,0.3)",
-                          }}
-                          className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
-                        >
-                          <p>
-                            一个即将打破阿里/京东等巨头垄断的新电商平台 (“咕咚”)
-                            将于X日X点正式上线！人人皆可免费入股！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
-                            <a
-                              href="https://www.gudong.shop/"
-                              className=" text-blue-500 underline-offset-1"
-                            >
-                              https://www.gudong.shop/指定位置/
-                            </a>
-                            <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                              <svg
-                                t="1669548772173"
-                                class="icon"
-                                viewBox="0 0 1024 1024"
-                                version="1.1"
-                                xmlns="http://www.w3.org/2000/svg"
-                                p-id="3657"
-                                width="20"
-                                height="20"
-                                className="inline"
-                              >
-                                <path
-                                  d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
-                                  p-id="3658"
-                                  fill="#ffffff"
-                                ></path>
-                                <path
-                                  d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
-                                  p-id="3659"
-                                  fill="#ffffff"
-                                ></path>
-                              </svg>
-                              <span>复制</span>
-                            </button>
-                          </p>
-                        </div>
-                        <div>
-                          <Upload
-                            name="avatar"
-                            listType="picture-card"
-                            className="avatar-uploader mt-5 ml-3"
-                            showUploadList={false}
-                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                            beforeUpload={beforeUpload}
-                            onChange={handleChange}
-                          >
-                            {imageUrl ? (
-                              <img src={imageUrl} alt="avatar" />
-                            ) : (
-                              uploadButton
-                            )}
-                          </Upload>
-                        </div>
-                        <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                          上传截图
-                        </button>
-                      </label>
+                      <Image
+                        className=" mx-5 w-20 rounded-md"
+                        src={code}
+                        alt="code"
+                      ></Image>
+                      <p className=" text-center  mt-1">微信②群</p>
                     </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md p-3 shadow-base  mt-10"
-          >
-            <p className=" text-xl font-bold text-white">Q&A 常见问题解答</p>
-            <div className="  mt-3">
-              <p className=" font-bold">Q: 本平台主营什么商品?</p>
-              <p className=" mt-1 ">
-                A:
-                本平台上线后将主营年轻人的消费品，如盲盒、手办、潮玩、服饰、化妆品等。
-              </p>
-            </div>
-            <div className="  mt-3 ">
-              <p className=" font-bold">Q: 本平台股份有何用途?</p>
-              <p className=" mt-1 ">
-                <span>A:</span>
-                本平台在此谈及的“股份”属于真正意义上的原始股，待平台小程序/APP上线后将以“积分”的形式显示在平台上，该“积分”将赋予以下五项功能和用户权益：
-              </p>
-              <ol>
-                <li>
-                  1.
-                  本平台未来上市后，持有该“积分”可直接按同等比例换算成平台的股票;
-                </li>
-                <li>
-                  2.
-                  本平台实现盈利后，持有该“积分”者皆可获得永久性分红（当前预设为按年/季/月/周/日进行）;
-                </li>
-                <li>
-                  3.
-                  为了合规起见，本平台仅会开通股份“转赠”功能以支持用户间线下交易;
-                </li>
-                <li>
-                  4.
-                  如果本平台上的卖家选择开通【“积分”支付】，则买家即可使用“积分”消费该卖家的商品，而本平台也会接受卖家使用“积分”抵扣交易佣金和广告费等;
-                </li>
-                <li>
-                  5.
-                  持有该“积分”的用户即可参加本平台在中后期发展过程中的在线化治理（如：发表提案和参与投票等）。
-                </li>
-              </ol>
-            </div>
-            <div className="  mt-3">
-              <p className=" font-bold">Q: 本平台如何获得盈利?</p>
-              <p className=" mt-1 ">
-                A:
-                本平台属于一个轻模式、轻运营的第三方服务商，专注为经营新潮商品的供应商和年轻的消费者群体提供精细化的服务，从中收取适当比例的服务费用，以及平台广告费等，与淘宝、京东、拼多多等平台无异。
-              </p>
-            </div>
-            <div className="  mt-3">
-              <p className=" font-bold">Q: 本平台“积分”如何释放?</p>
-              <p className=" mt-1 ">
-                A:
-                本平台“积分”共有62%（6200万份）免费奖励给全生态用户，其中除了2%（200万份）提前奖励给最早期的1万名用户之外，余下的60%（6000万份）将均分三份，按阶段释放给全生态用户，主要奖励用户【注册/拉新】和【购物/售货】，具体分配细则详见平台上线后附带文档
-              </p>
-            </div>
-          </div>
-          <div
-            style={{ "background-color": "rgba(254,226,226,0.3)" }}
-            className=" rounded-md p-3 shadow-base  mt-10"
-          >
-            <ol className="relative border-l ml-10 mt-5 border-gray-200 dark:border-gray-700">
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    class="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  官网推出并空投
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  小程序/app上线
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  小程序/app上线
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  盈利并开始分红
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  治理性NFT发布
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  在线化社区治理
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-              <li className="mb-10 ml-6">
-                <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <svg
-                    aria-hidden="true"
-                    className="w-3 h-3 text-blue-600 dark:text-blue-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                  进入到上市程序
-                </h3>
-                <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                  Get access to over 20+ pages including a dashboard layout,
-                  charts, kanban board, calendar, and pre-order E-commerce &
-                  Marketing pages.
-                </p>
-              </li>
-            </ol>
-          </div>
-          <div
-            style={{ "background-color": "rgba(109, 47, 127, 0.3)" }}
-            className=" p-5 mt-10 shadow-2xl  rounded-md"
-          >
-            <div className=" ml-5 font-bold text-xl">
-              联系方式
-              <div className=" mt-1 text-base font-bold">
-                <svg
-                  t="1669554731645"
-                  className=" inline-block icon mr-2"
-                  viewBox="0 0 1206 1024"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  p-id="6738"
-                  width="20"
-                  height="20"
-                >
-                  <path
-                    d="M982.749557 0.001605H223.417832A224.340714 224.340714 0 0 0 0 222.536679v578.888121a224.340714 224.340714 0 0 0 223.417832 222.535075h759.331725a224.340714 224.340714 0 0 0 223.417831-222.535075V222.536679A222.615325 222.615325 0 0 0 982.749557 0.001605zM223.417832 88.758833h759.331725a132.413586 132.413586 0 0 1 114.357187 64.922782l-437.366085 353.704775a88.275724 88.275724 0 0 1-111.708916 0L110.665657 153.681615a128.722055 128.722055 0 0 1 112.752175-64.922782z m759.331725 845.159803H223.417832a134.540228 134.540228 0 0 1-134.299476-133.777846V253.031929l401.614417 324.573786a177.434205 177.434205 0 0 0 111.708916 39.724076 174.745808 174.745808 0 0 0 111.708916-39.724076l401.614417-324.573786v547.108861a131.731455 131.731455 0 0 1-133.015465 133.777846z"
-                    p-id="6739"
-                    fill="#f4ea2a"
-                  ></path>
-                </svg>
-                123456789@qq.com
-              </div>
-            </div>
-            <div>
-              <p className=" ml-5 font-bold text-xl mt-3">加入社群</p>
-              <div className=" flex flex-row justify-start  mt-3 items-center">
-                <div>
-                  <Image
-                    className=" mx-5 w-20 rounded-md"
-                    src={code}
-                    alt="code"
-                  ></Image>
-                  <p className=" text-center mt-1">微信①群</p>
-                </div>
-                <div>
-                  <Image
-                    className=" mx-5 w-20 rounded-md"
-                    src={code}
-                    alt="code"
-                  ></Image>
-                  <p className=" text-center  mt-1">微信②群</p>
-                </div>
-                <div className=" text-center">
-                  <Image
-                    className=" mx-5 w-20 rounded-md"
-                    src={code}
-                    alt="code"
-                  ></Image>
-                  <p className=" text-center  mt-1">微信③群</p>
+                    <div className=" text-center">
+                      <Image
+                        className=" mx-5 w-20 rounded-md"
+                        src={code}
+                        alt="code"
+                      ></Image>
+                      <p className=" text-center  mt-1">微信③群</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
