@@ -1,5 +1,7 @@
 body {
-  background-image: url("/images/gudong-bg.jpg");
+  background-image: url("/images/b3.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
   background-attachment: fixed;
 }
 @tailwind base;
