@@ -222,17 +222,17 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" p-2 mr-6 w-full rounded-md text-white">
+                <div className=" p-2 mr-6 w-full rounded-md text-black">
                   <p className="  font-bold  text-4xl">
                     咕咚原始股份免费申请方式如下：
                   </p>
-                  <p className="  text-4xl">
+                  <p className=" text-4xl">
                     备注：空投份额为200万股（占总股份的2%），每人最多可申请200股。
                   </p>
                   <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
                     <div className=" font-bold">
                       1、请完成以下信息
-                      <span className=" font-bold text-indigo-800">
+                      <span className=" font-bold text-fuchsia-400">
                         （+50股）
                       </span>
                     </div>
@@ -275,10 +275,10 @@ export default function Home() {
                       </form>
                     </div>
                   </div>
-                  <div className=" mt-5 border-b-2 border-gray-400 pb-5 border-dashed">
+                  <div className=" mt-5 border-b-2 border-gray-400 pb-5 border-dashed text-black">
                     <div className=" font-bold">
                       2、请完成以下分享
-                      <span className=" font-bold text-indigo-800">
+                      <span className=" font-bold text-fuchsia-400">
                         （+50股）
                       </span>
                     </div>
@@ -358,9 +358,9 @@ export default function Home() {
                     </div>
                   </div>
                   <div className=" mt-5 pb-5 ">
-                    <div className=" font-bold">
+                    <div className=" font-bold text-black">
                       3、请完成以下分享
-                      <span className=" font-bold text-indigo-800">
+                      <span className=" font-bold text-fuchsia-400">
                         （+100股）
                       </span>
                     </div>
@@ -448,56 +448,56 @@ export default function Home() {
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:justify-start md:items-start md:p-5
-                             flex flex-col justify-between items-center   text-white
+                             flex flex-col justify-between items-center text-black p-6
                   shadow-2xl"
               >
-                <p className=" font-bold text-4xl text-white">
+                <p className=" font-bold text-4xl text-purple-800">
                   Q&A 常见问题解答
                 </p>
-                <div className="  mt-3">
+                <div className="  mt-6">
                   <p className=" font-bold">Q: 本平台主营什么商品?</p>
                   <p className=" mt-1 ">
                     A:
                     本平台上线后将主营年轻人的消费品，如盲盒、手办、潮玩、服饰、化妆品等。
                   </p>
                 </div>
-                <div className="  mt-3 ">
+                <div className="  mt-6 ">
                   <p className=" font-bold">Q: 本平台股份有何用途?</p>
                   <p className=" mt-1 ">
                     <span>A:</span>
                     本平台在此谈及的“股份”属于真正意义上的原始股，待平台小程序/APP上线后将以“积分”的形式显示在平台上，该“积分”将赋予以下五项功能和用户权益：
                   </p>
                   <ol>
-                    <li>
+                    <li className=" mt-3">
                       1.
-                      本平台未来上市后，持有该“积分”可直接按同等比例换算成平台的股票;
+                      本平台未来上市后，持有该“积分”可直接按同等比例换算成平台的股票；
                     </li>
-                    <li>
+                    <li className=" mt-3">
                       2.
-                      本平台实现盈利后，持有该“积分”者皆可获得永久性分红（当前预设为按年/季/月/周/日进行）;
+                      本平台实现盈利后，持有该“积分”者皆可获得永久性分红（按年/季/月/周/日进行）；
                     </li>
-                    <li>
+                    <li className=" mt-3">
                       3.
-                      为了合规起见，本平台仅会开通股份“转赠”功能以支持用户间线下交易;
+                      为了合规起见，本平台仅会开通股份“转赠”功能以支持用户间线下交易；
                     </li>
-                    <li>
+                    <li className=" mt-3">
                       4.
-                      如果本平台上的卖家选择开通【“积分”支付】，则买家即可使用“积分”消费该卖家的商品，而本平台也会接受卖家使用“积分”抵扣交易佣金和广告费等;
+                      如果本平台上的卖家选择开通【“积分”支付】，则买家即可使用“积分”消费该卖家的商品，而本平台也会接受卖家使用“积分”抵扣交易佣金和广告费等；
                     </li>
-                    <li>
+                    <li className=" mt-3">
                       5.
                       持有该“积分”的用户即可参加本平台在中后期发展过程中的在线化治理（如：发表提案和参与投票等）。
                     </li>
                   </ol>
                 </div>
-                <div className="  mt-3">
+                <div className="  mt-6">
                   <p className=" font-bold">Q: 本平台如何获得盈利?</p>
                   <p className=" mt-1 ">
                     A:
                     本平台属于一个轻模式、轻运营的第三方服务商，专注为经营新潮商品的供应商和年轻的消费者群体提供精细化的服务，从中收取适当比例的服务费用，以及平台广告费等，与淘宝、京东、拼多多等平台无异。
                   </p>
                 </div>
-                <div className="  mt-3">
+                <div className="  mt-6">
                   <p className=" font-bold">Q: 本平台“积分”如何释放?</p>
                   <p className=" mt-1 ">
                     A:
@@ -512,15 +512,15 @@ export default function Home() {
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center md:p-5
-                             flex flex-col justify-between items-center  
+                             flex flex-col justify-between items-start  
                   shadow-2xl"
               >
                 <ol className="relative border-l text-4xl ml-10 mt-5 border-gray-200 dark:border-gray-700">
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        class="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -532,18 +532,18 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="flex items-center mb-1 font-semibold text-gray-900 dark:text-white">
+                    <h3 className="flex font-bold ml-7 items-center mb-1 text-gray-900 dark:text-white">
                       官网推出并空投
                     </h3>
-                    <p class="mb-4 font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7 font-normal text-white dark:text-gray-400">
                       范德萨范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -555,18 +555,18 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-gray-900 dark:text-white">
                       小程序/app上线
                     </h3>
-                    <p class="mb-4  font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
                       放大范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -578,18 +578,18 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-gray-900 dark:text-white">
                       小程序/app上线
                     </h3>
-                    <p class="mb-4  font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
                       范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -601,18 +601,18 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl  ml-7 font-bold text-gray-900 dark:text-white">
                       盈利并开始分红
                     </h3>
-                    <p class="mb-4 text-4xl font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7 text-4xl font-normal text-white dark:text-gray-400">
                       反对撒飞洒范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -624,18 +624,18 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl ml-7  font-bold text-gray-900 dark:text-white">
                       治理性NFT发布
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7  text-4xl font-normal text-white dark:text-gray-400">
                       范德萨范德萨富士达范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -647,18 +647,18 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl ml-7  font-bold text-gray-900 dark:text-white">
                       在线化社区治理
                     </h3>
-                    <p class="mb-4 text-4xl font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
                       范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
                         aria-hidden="true"
-                        className="w-3 h-3 text-blue-600 dark:text-blue-400"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -670,10 +670,10 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-2 text-4xl ml-7 font-bold text-gray-900 dark:text-white">
                       进入到上市程序
                     </h3>
-                    <p class="mb-4 text-4xl font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
                       范德萨范德萨发发生
                     </p>
                   </li>
