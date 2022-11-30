@@ -75,87 +75,94 @@ export default function Home() {
           <div className=" mt-5 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-start
+                  shadow-2xl"
+              >
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                  <p>
+                    这是一场<span className=" text-purple-800">真实的</span>
+                    社会实验
+                  </p>
+                  <p className=" mt-5 ">
+                    中国将出现一个<span className=" text-red-500">全新的</span>
+                    电子商务平台
+                  </p>
+                  <p className="">
+                    它的名字叫 <span className=" text-pink-500"> 咕咚！</span>
+                  </p>
+                </div>
+                <div className=" w-full">
+                  <Image
+                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    src={computer}
+                    alt="computer"
+                  ></Image>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center
+                             flex flex-col justify-between items-center  
+                  shadow-2xl"
+              >
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                  <p>
+                    咕咚平台主营年轻人的消费品
+                    但有一点不一样，咕咚平台将会记录每一位用
+                    户在平台上所做的任何贡献（例如：邀请来好友或者买卖商品等），
+                    并将这些贡献直接转化成咕咚的原始股份，免费赠送予您。
+                  </p>
+                </div>
+                <div className=" w-full">
+                  <Image
+                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    src={computer}
+                    alt="computer"
+                  ></Image>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md">
+            <div class={styles.box}>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
                 <div className=" md:ml-6 md:w-96 mt-5 text-center font-bold text-white">
-                  <p className=" text-3xl">这是一场真实的社会实验</p>
-                  <p className=" text-xl mt-5 ">
-                    中国将出现一个全新的电子商务平台
-                  </p>
-                </div>
-                <Image
-                  className=" md:w-5/12 w-3/4 md:mr-6 shrink-0"
-                  src={computer}
-                  alt="fdsafsd"
-                ></Image>
-              </div>
-            </div>
-          </div>
-          <div className=" mt-10 rounded-md">
-            <div class={styles.box}>
-              <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:flex-row md:justify-between md:items-center
-                             flex flex-col justify-between items-center  
-                  shadow-2xl"
-              >
-                <div className=" mr-6 w-96 text-center  rounded-md text-white font-bold text-base my-5">
-                  <div className=" text-start">
-                    <p>这个平台的名字叫“咕咚”！主营年轻人的消费品</p>
-                    <p>但有一点不一样，咕咚平台会记录每一位用</p>
-                    <p>户在咕咚所做的贡献。 </p>
-                  </div>
-                  <div className=" text-start">
-                    <p>
-                      例如：您为咕咚邀请来好友或者，您在咕咚平台
-                      买卖商品，皆是为咕咚做出了贡献，咕咚将把这
-                      些贡献直接转化成咕咚的股份，免费赠送于您。{" "}
-                    </p>
-                  </div>
-                </div>
-                <Image
-                  className=" w-96 ml-6"
-                  src={computer}
-                  alt="fdsafsd"
-                ></Image>
-              </div>
-            </div>
-          </div>
-          <div className=" mt-10 rounded-md">
-            <div class={styles.box}>
-              <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:flex-row md:justify-between md:items-center
-                             flex flex-col justify-between items-center  
-                  shadow-2xl"
-              >
-                <div className=" mr-6 w-96 text-center rounded-md text-white font-bold text-base">
                   <p>
                     咕咚平台有可能在未来5年内超越阿里巴巴，甚至超越亚马逊，也就是市值将达万亿以上
                     (咕咚的股份总量1亿股)
                     ，也就是，未来每股的价值将达万元以上，也许您会觉得不可能，但万一呢？{" "}
                   </p>
                 </div>
-                <Image
-                  className=" w-96 md:mr-6"
-                  src={huojian}
-                  alt="fdsafsd"
-                ></Image>
+                <div className=" w-full">
+                  <Image
+                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    src={computer}
+                    alt="computer"
+                  ></Image>
+                </div>
               </div>
             </div>
           </div>
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" mr-6 w-96 rounded-md text-white font-bold my-5">
+                <div className=" md:ml-6 md:w-96 mt-5 text-center font-bold text-white">
                   <p>
                     咕咚小程序/APP产品正在同步开发中，待产品上线后，咕咚的股份将以“积分”的形式显示在咕咚小程序及APP产品上。
                   </p>
@@ -163,18 +170,20 @@ export default function Home() {
                     本“积分”发行总量为1亿份（永无增发），其中咕咚创始团队仅持有10%，28%预留给投资机构及团队后续扩员，2%免费空投给最早来到这里的1万名种子用户，剩余60%将分阶段、分批次免费赠予全生态用户！早来者会获得多一些，晚来者会获得少一些。{" "}
                   </p>
                 </div>
-                <Image
-                  className=" w-96 ml-6"
-                  src={computer}
-                  alt="fdsafsd"
-                ></Image>
+                <div className=" w-full">
+                  <Image
+                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    src={computer}
+                    alt="computer"
+                  ></Image>
+                </div>
               </div>
             </div>
           </div>
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
@@ -195,7 +204,7 @@ export default function Home() {
                       <form action="">
                         <div
                           style={{
-                            "background-color": "rgba(254,226,226,0.3)",
+                            "background-color": "rgba(254,226,226,0.1)",
                           }}
                           className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
                         >
@@ -246,7 +255,7 @@ export default function Home() {
                             </p>
                             <div
                               style={{
-                                "background-color": "rgba(254,226,226,0.3)",
+                                "background-color": "rgba(254,226,226,0.1)",
                               }}
                               className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
                             >
@@ -328,7 +337,7 @@ export default function Home() {
                             </p>
                             <div
                               style={{
-                                "background-color": "rgba(254,226,226,0.3)",
+                                "background-color": "rgba(254,226,226,0.1)",
                               }}
                               className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
                             >
@@ -401,8 +410,8 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:flex-row md:justify-between md:items-center
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                className=" md:flex md:justify-start md:items-start md:p-5
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
@@ -465,8 +474,8 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:flex-row md:justify-between md:items-center
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center md:p-5
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
@@ -653,9 +662,8 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:flex-row md:justify-between md:items-center
-                             flex flex-col justify-between items-center  
+                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                className="flex flex-col justify-start items-start p-5
                   shadow-2xl"
               >
                 <div className=" ml-5 font-bold text-xl">
