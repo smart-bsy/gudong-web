@@ -75,12 +75,12 @@ export default function Home() {
           <div className=" mt-5 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-start
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-3xl">
                   <p>
                     这是一场<span className=" text-purple-800">真实的</span>
                     社会实验
@@ -106,12 +106,12 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-3xl">
                   <p>
                     咕咚平台主营年轻人的消费品
                     但有一点不一样，咕咚平台将会记录每一位用
@@ -132,7 +132,7 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
@@ -157,7 +157,7 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
@@ -183,7 +183,7 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
                              flex flex-col justify-between items-center  
                   shadow-2xl"
@@ -204,7 +204,7 @@ export default function Home() {
                       <form action="">
                         <div
                           style={{
-                            "background-color": "rgba(254,226,226,0.1)",
+                            "background-color": "rgba(254,226,226,0.3)",
                           }}
                           className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
                         >
@@ -255,7 +255,7 @@ export default function Home() {
                             </p>
                             <div
                               style={{
-                                "background-color": "rgba(254,226,226,0.1)",
+                                "background-color": "rgba(254,226,226,0.3)",
                               }}
                               className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
                             >
@@ -337,7 +337,7 @@ export default function Home() {
                             </p>
                             <div
                               style={{
-                                "background-color": "rgba(254,226,226,0.1)",
+                                "background-color": "rgba(254,226,226,0.3)",
                               }}
                               className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
                             >
@@ -410,7 +410,7 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:justify-start md:items-start md:p-5
                              flex flex-col justify-between items-center  
                   shadow-2xl"
@@ -474,7 +474,7 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center md:p-5
                              flex flex-col justify-between items-center  
                   shadow-2xl"
@@ -662,7 +662,7 @@ export default function Home() {
           <div className=" mt-10 rounded-md">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.1)" }}
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className="flex flex-col justify-start items-start p-5
                   shadow-2xl"
               >
