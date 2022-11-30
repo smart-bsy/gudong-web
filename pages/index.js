@@ -61,11 +61,13 @@ export default function Home() {
       </Head>
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between">
-          <Image className=" w-48 my-5 mx-10" src={logo} alt="logo"></Image>
-          <div className=" inline-flex items-center justify-around w-28 md:w-96 text-white font-mono font-bold mr-2">
-            <a>登录</a>
-            <a>账号</a>
-            <a>股份</a>
+          <Image className=" w-52 my-5 mx-10" src={logo} alt="logo"></Image>
+          <div className=" inline-flex items-center justify-around w-96 text-white px-5 font-mono font-bold mr-2">
+            <span className="text-4xl">股份</span>
+            <span className=" text-center">
+              <Image src={computer} className=" rounded-full w-16"></Image>
+              <div className=" mt-3">登录</div>
+            </span>
           </div>
         </div>
         <div className=" md:w-3/4 clear-both flex flex-col  w-[54rem] m-auto">
@@ -199,7 +201,7 @@ export default function Home() {
                     <span className=" font-bold">28%</span>
                     用于对接金融机构投资，以及团队后续扩员；
                     <span className=" font-bold">2%</span>
-                    <span className="font-bold">免费空投</span>
+                    <span className="font-bold text-purple-800">免费空投</span>
                     给最早来到这里的
                     <span className="font-bold">前1万名</span>
                     用户；剩余
@@ -219,7 +221,7 @@ export default function Home() {
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
-                             flex flex-col justify-between items-center  
+                             flex flex-col justify-between items-center p-6
                   shadow-2xl"
               >
                 <div className=" p-2 mr-6 w-full rounded-md text-black">
@@ -451,7 +453,7 @@ export default function Home() {
                              flex flex-col justify-between items-center text-black p-6
                   shadow-2xl"
               >
-                <p className=" font-bold text-4xl text-purple-800">
+                <p className=" font-bold text-5xl text-purple-800">
                   Q&A 常见问题解答
                 </p>
                 <div className="  mt-6">
@@ -474,7 +476,7 @@ export default function Home() {
                     </li>
                     <li className=" mt-3">
                       2.
-                      本平台实现盈利后，持有该“积分”者皆可获得永久性分红（按年/季/月/周/日进行）；
+                      本平台实现盈利后，持有该“积分”者皆可获得永久性分红，按年/季/月/周/日进行；
                     </li>
                     <li className=" mt-3">
                       3.
@@ -532,10 +534,10 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="flex font-bold ml-7 items-center mb-1 text-gray-900 dark:text-white">
+                    <h3 className="flex font-bold ml-7  items-center mb-1 text-purple-800 dark:text-white">
                       官网推出并空投
                     </h3>
-                    <p class="mb-4 ml-7 font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7 text-white dark:text-gray-400">
                       范德萨范德萨范德萨范德萨
                     </p>
                   </li>
@@ -555,10 +557,10 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-purple-800 dark:text-white">
                       小程序/app上线
                     </h3>
-                    <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7  text-white dark:text-gray-400">
                       放大范德萨范德萨范德萨
                     </p>
                   </li>
@@ -578,7 +580,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-purple-800 dark:text-white">
                       小程序/app上线
                     </h3>
                     <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
@@ -601,7 +603,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl  ml-7 font-bold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl  ml-7 font-bold text-purple-800 dark:text-white">
                       盈利并开始分红
                     </h3>
                     <p class="mb-4 ml-7 text-4xl font-normal text-white dark:text-gray-400">
@@ -624,7 +626,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl ml-7  font-bold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl ml-7  font-bold text-purple-800 dark:text-white">
                       治理性NFT发布
                     </h3>
                     <p class="mb-4 ml-7  text-4xl font-normal text-white dark:text-gray-400">
@@ -647,7 +649,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl ml-7  font-bold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl ml-7  font-bold text-purple-800 dark:text-white">
                       在线化社区治理
                     </h3>
                     <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
@@ -670,7 +672,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-2 text-4xl ml-7 font-bold text-gray-900 dark:text-white">
+                    <h3 className="mb-2 text-4xl ml-7 font-bold text-purple-800 dark:text-white">
                       进入到上市程序
                     </h3>
                     <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
