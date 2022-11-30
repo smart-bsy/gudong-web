@@ -80,9 +80,7 @@ export default function Home() {
                 <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     这是一场
-                    <span className="font-bold text-5xl text-blue-700">
-                      真实的
-                    </span>
+                    <span className="font-bold text-5xl">真实的</span>
                     社会实验
                   </p>
                   <p>
@@ -120,20 +118,13 @@ export default function Home() {
               >
                 <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
                   <p>
-                    咕咚平台主营{" "}
-                    <span className="font-bold text-5xl text-blue-700">
-                      年轻人
-                    </span>
+                    咕咚平台主营
+                    <span className="font-bold">年轻人</span>
                     的消费品 但有一点不一样，咕咚平台将会记录每一位用
                     户在平台上所做的任何贡献（例如：邀请来好友或者买卖商品等），
                     并将这些贡献直接转化成咕咚的
-                    <span className="font-bold  text-5xl text-purple-800">
-                      原始股份
-                    </span>
-                    ，
-                    <span className="font-bold text-5xl text-fuchsia-400">
-                      免费赠送
-                    </span>
+                    <span className="font-bold text-purple-800">原始股份</span>
+                    ，<span className="font-bold">免费赠送</span>
                     予您。
                   </p>
                 </div>
@@ -156,23 +147,15 @@ export default function Home() {
                   shadow-2xl"
               >
                 <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
-                  咕咚平台有可能，在未来{" "}
-                  <span className="font-bold text-5xl text-blue-700">
-                    5年内
-                  </span>
+                  咕咚平台有可能，在未来
+                  <span className="font-bold">5年内</span>
                   ，超越阿里巴巴，甚至超越亚马逊，也就是: 市值将达
-                  <span className="font-bold  text-5xl text-purple-800">
-                    万亿
-                  </span>
+                  <span className="font-bold text-purple-800">万亿</span>
                   级别--咕咚的原始股份的总量为1亿股（永无增发）
                   也就是未来每1股的价值将达
-                  <span className="font-bold text-5xl text-fuchsia-400">
-                    万元
-                  </span>
+                  <span className="font-bold">万元</span>
                   以上！或许您也一样认为这不可能，但是，
-                  <span className="font-bold text-5xl text-blue-700">
-                    万一呢？
-                  </span>{" "}
+                  <span className="font-bold">万一呢？</span>
                 </div>
                 <div className=" w-full">
                   <Image
@@ -195,13 +178,9 @@ export default function Home() {
                 <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
                   <p>
                     咕咚平台小程序与APP产品正在
-                    <span className="font-bold  text-5xl text-purple-800">
-                      同步开发中
-                    </span>
+                    <span className="font-bold">同步开发中</span>
                     ，待平台上线之后，咕咚的股份将以
-                    <span className="font-bold text-5xl text-fuchsia-400">
-                      “积分”
-                    </span>
+                    <span className="font-bold text-fuchsia-400">“积分”</span>
                     的形式显示在平台上。
                   </p>
                   <div className=" w-full">
@@ -213,32 +192,22 @@ export default function Home() {
                   </div>
                   <p className=" pb-5">
                     咕咚“积分”的总量固定为
-                    <span className="font-bold text-5xl text-blue-700">
-                      1亿份
-                    </span>
+                    <span className="font-bold">1亿份</span>
                     ，其中创始团队仅占比
                     <span className=" font-bold">10%</span>
                     ；预留
                     <span className=" font-bold">28%</span>
                     用于对接金融机构投资，以及团队后续扩员；
                     <span className=" font-bold">2%</span>
-                    <span className="font-bold  text-5xl text-purple-800">
-                      免费空投
-                    </span>
+                    <span className="font-bold">免费空投</span>
                     给最早来到这里的
-                    <span className="font-bold text-5xl text-fuchsia-400">
-                      前1万名
-                    </span>
+                    <span className="font-bold">前1万名</span>
                     用户；剩余
                     <span className=" font-bold">60%</span>
                     将分阶段、分批次免费赠予全生态用户！
-                    <span className="font-bold text-5xl text-blue-700">
-                      早来者
-                    </span>
+                    <span className="font-bold">早来者</span>
                     会获得
-                    <span className="font-bold  text-5xl text-blue-700">
-                      多
-                    </span>
+                    <span className="font-bold">多</span>
                     一些，晚来者会获得少一些。
                   </p>
                 </div>
@@ -253,9 +222,11 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" p-2 mr-6 w-full rounded-md text-white text-base">
-                  <p className="  font-bold">咕咚原始股份免费申请方式如下：</p>
-                  <p>
+                <div className=" p-2 mr-6 w-full rounded-md text-white">
+                  <p className="  font-bold  text-5xl">
+                    咕咚原始股份免费申请方式如下：
+                  </p>
+                  <p className="  text-5xl">
                     备注：空投份额为200万股（占总股份的2%），每人最多可申请200股。
                   </p>
                   <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
