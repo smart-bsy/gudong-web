@@ -80,7 +80,7 @@ export default function Home() {
                              flex flex-col justify-between items-start
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-3xl">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     这是一场<span className=" text-purple-800">真实的</span>
                     社会实验
@@ -111,7 +111,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-3xl">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
                   <p>
                     咕咚平台主营年轻人的消费品
                     但有一点不一样，咕咚平台将会记录每一位用
@@ -137,7 +137,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 mt-5 text-center font-bold text-white">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
                   <p>
                     咕咚平台有可能在未来5年内超越阿里巴巴，甚至超越亚马逊，也就是市值将达万亿以上
                     (咕咚的股份总量1亿股)
@@ -162,7 +162,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 mt-5 text-center font-bold text-white">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
                   <p>
                     咕咚小程序/APP产品正在同步开发中，待产品上线后，咕咚的股份将以“积分”的形式显示在咕咚小程序及APP产品上。
                   </p>
