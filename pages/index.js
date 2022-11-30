@@ -214,7 +214,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className=" mt-10 rounded-md">
+          <div className=" mt-10 rounded-md text-4xl">
             <div class={styles.box}>
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
@@ -223,14 +223,14 @@ export default function Home() {
                   shadow-2xl"
               >
                 <div className=" p-2 mr-6 w-full rounded-md text-white">
-                  <p className="  font-bold  text-5xl">
+                  <p className="  font-bold  text-4xl">
                     咕咚原始股份免费申请方式如下：
                   </p>
-                  <p className="  text-5xl">
+                  <p className="  text-4xl">
                     备注：空投份额为200万股（占总股份的2%），每人最多可申请200股。
                   </p>
                   <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
-                    <div>
+                    <div className=" font-bold">
                       1、请完成以下信息
                       <span className=" font-bold text-indigo-800">
                         （+50股）
@@ -249,19 +249,19 @@ export default function Home() {
                           </label>
                           <div className=" text-left mt-3">
                             <input
-                              className=" text-2xl ml-2"
+                              className=" ml-2 text-4xl"
                               type="radio"
                               name="sex"
                               value="male"
                             />
-                            <span className="text-base mr-16 px-3">买家</span>
+                            <span className="text-4xl mr-16 px-3 ">买家</span>
                             <input
-                              className=" text-2xl"
+                              className="text-4xl"
                               type="radio"
                               name="sex"
                               value="female"
                             />
-                            <span className=" text-base px-3">卖家</span>
+                            <span className="text-4xl px-3">卖家</span>
                             <button
                               onClick={(event) => {
                                 event.preventDefault();
@@ -276,7 +276,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className=" mt-5 border-b-2 border-gray-400 pb-5 border-dashed">
-                    <div>
+                    <div className=" font-bold">
                       2、请完成以下分享
                       <span className=" font-bold text-indigo-800">
                         （+50股）
@@ -285,7 +285,7 @@ export default function Home() {
                     <div>
                       <form action="">
                         <div>
-                          <label className=" block">
+                          <label className="">
                             <p>
                               请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
                             </p>
@@ -313,8 +313,8 @@ export default function Home() {
                                     version="1.1"
                                     xmlns="http://www.w3.org/2000/svg"
                                     p-id="3657"
-                                    width="20"
-                                    height="20"
+                                    width="50"
+                                    height="50"
                                     className="inline"
                                   >
                                     <path
@@ -358,7 +358,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className=" mt-5 pb-5 ">
-                    <div>
+                    <div className=" font-bold">
                       3、请完成以下分享
                       <span className=" font-bold text-indigo-800">
                         （+100股）
@@ -395,8 +395,8 @@ export default function Home() {
                                     version="1.1"
                                     xmlns="http://www.w3.org/2000/svg"
                                     p-id="3657"
-                                    width="20"
-                                    height="20"
+                                    width="50"
+                                    height="50"
                                     className="inline"
                                   >
                                     <path
@@ -443,15 +443,15 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className=" mt-10 rounded-md">
+          <div className=" mt-10 rounded-md text-4xl">
             <div class={styles.box}>
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:justify-start md:items-start md:p-5
-                             flex flex-col justify-between items-center  
+                             flex flex-col justify-between items-center   text-white
                   shadow-2xl"
               >
-                <p className=" text-xl font-bold text-white">
+                <p className=" font-bold text-4xl text-white">
                   Q&A 常见问题解答
                 </p>
                 <div className="  mt-3">
@@ -507,7 +507,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className=" mt-10 rounded-md">
+          <div className=" mt-10 rounded-md text-4xl">
             <div class={styles.box}>
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
@@ -515,7 +515,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <ol className="relative border-l ml-10 mt-5 border-gray-200 dark:border-gray-700">
+                <ol className="relative border-l text-4xl ml-10 mt-5 border-gray-200 dark:border-gray-700">
                   <li className="mb-10 ml-6">
                     <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
@@ -532,13 +532,11 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="flex items-center mb-1 font-semibold text-gray-900 dark:text-white">
                       官网推出并空投
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                    <p class="mb-4 font-normal text-white dark:text-gray-400">
+                      范德萨范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
@@ -557,13 +555,11 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
                       小程序/app上线
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                    <p class="mb-4  font-normal text-white dark:text-gray-400">
+                      放大范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
@@ -582,13 +578,11 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
                       小程序/app上线
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                    <p class="mb-4  font-normal text-white dark:text-gray-400">
+                      范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
@@ -607,13 +601,11 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
                       盈利并开始分红
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                    <p class="mb-4 text-4xl font-normal text-white dark:text-gray-400">
+                      反对撒飞洒范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
@@ -632,13 +624,11 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
                       治理性NFT发布
                     </h3>
                     <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                      范德萨范德萨富士达范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
@@ -657,13 +647,11 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
                       在线化社区治理
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                    <p class="mb-4 text-4xl font-normal text-white dark:text-gray-400">
+                      范德萨范德萨范德萨
                     </p>
                   </li>
                   <li className="mb-10 ml-6">
@@ -682,29 +670,27 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="mb-1 text-4xl font-semibold text-gray-900 dark:text-white">
                       进入到上市程序
                     </h3>
-                    <p class="mb-4 text-base font-normal text-white dark:text-gray-400">
-                      Get access to over 20+ pages including a dashboard layout,
-                      charts, kanban board, calendar, and pre-order E-commerce &
-                      Marketing pages.
+                    <p class="mb-4 text-4xl font-normal text-white dark:text-gray-400">
+                      范德萨范德萨发发生
                     </p>
                   </li>
                 </ol>
               </div>
             </div>
           </div>
-          <div className=" mt-10 rounded-md">
+          <div className=" mt-10 rounded-md ">
             <div class={styles.box}>
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className="flex flex-col justify-start items-start p-5
                   shadow-2xl"
               >
-                <div className=" ml-5 font-bold text-xl">
+                <div className=" ml-5 font-bold text-4xl">
                   联系方式
-                  <div className=" mt-1 text-base font-bold">
+                  <div className=" mt-1 text-3xl font-bold">
                     <svg
                       t="1669554731645"
                       className=" inline-block icon mr-2"
@@ -725,7 +711,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <p className=" ml-5 font-bold text-xl mt-3">加入社群</p>
+                  <p className=" ml-5 font-bold mt-3 text-4xl">加入社群</p>
                   <div className=" flex flex-row justify-start  mt-3 items-center">
                     <div>
                       <Image
