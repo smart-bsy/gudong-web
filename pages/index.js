@@ -2,7 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import computer from "../public/images/computer.png";
 import huojian from "../public/images/huojian.png";
+import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
+import longduan from "../public/images/longduan.png";
 import code from "../public/images/code.png";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { Upload } from "antd";
@@ -61,7 +63,7 @@ export default function Home() {
       </Head>
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between">
-          <Image className=" w-52 my-5 mx-10" src={logo} alt="logo"></Image>
+          <Image className=" w-60 my-5 " src={logo} alt="logo"></Image>
           <div className=" inline-flex items-center justify-around w-96 text-white px-5 font-mono font-bold mr-2">
             <span className="text-4xl">股份</span>
             <span className=" text-center">
@@ -133,8 +135,8 @@ export default function Home() {
                 <div className=" w-full">
                   <Image
                     className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
-                    src={computer}
-                    alt="computer"
+                    src={longduan}
+                    alt="loongduan"
                   ></Image>
                 </div>
               </div>
@@ -156,13 +158,13 @@ export default function Home() {
                   级别--咕咚的原始股份的总量为1亿股（永无增发）
                   也就是未来每1股的价值将达
                   <span className="font-bold">万元</span>
-                  以上！或许您也一样认为这不可能，但是，
-                  <span className="font-bold">万一呢？</span>
+                  以上！或许您也认为这不可能，但
+                  <span className="font-bold">万一</span>呢？
                 </div>
                 <div className=" w-full">
                   <Image
                     className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
-                    src={computer}
+                    src={huojian}
                     alt="computer"
                   ></Image>
                 </div>
@@ -188,7 +190,7 @@ export default function Home() {
                   <div className=" w-full">
                     <Image
                       className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
-                      src={computer}
+                      src={bin}
                       alt="computer"
                     ></Image>
                   </div>
@@ -387,7 +389,7 @@ export default function Home() {
                                   href="https://www.gudong.shop/"
                                   className=" text-blue-500 underline-offset-1"
                                 >
-                                  https://www.gudong.shop/指定位置/
+                                  https://www.gudong.shop/
                                 </a>
                                 <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
                                   <svg
