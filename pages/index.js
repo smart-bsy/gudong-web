@@ -63,7 +63,7 @@ export default function Home() {
       </Head>
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between">
-          <Image className=" w-60 my-5 " src={logo} alt="logo"></Image>
+          <Image className=" w-60 my-5 mx-10" src={logo} alt="logo"></Image>
           <div className=" inline-flex items-center justify-around w-96 text-white px-5 font-mono font-bold mr-2">
             <span className="text-4xl">股份</span>
             <span className=" text-center">
