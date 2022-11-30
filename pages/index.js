@@ -111,7 +111,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-3xl">
+                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-3xl">
                   <p>
                     咕咚平台主营年轻人的消费品
                     但有一点不一样，咕咚平台将会记录每一位用
