@@ -138,11 +138,9 @@ export default function Home() {
                   shadow-2xl"
               >
                 <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
-                  <p>
-                    咕咚平台有可能在未来5年内超越阿里巴巴，甚至超越亚马逊，也就是市值将达万亿以上
-                    (咕咚的股份总量1亿股)
-                    ，也就是，未来每股的价值将达万元以上，也许您会觉得不可能，但万一呢？{" "}
-                  </p>
+                  咕咚平台有可能，在未来5年内，超越阿里巴巴，甚至超越亚马逊，也就是:
+                  市值将达万亿级别--咕咚的原始股份的总量为1亿股（永不增发）
+                  也就是未来每1股的价值将达万元以上！或许您也一样认为这不可能，但是，万一呢？{" "}
                 </div>
                 <div className=" w-full">
                   <Image
@@ -164,10 +162,10 @@ export default function Home() {
               >
                 <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
                   <p>
-                    咕咚小程序/APP产品正在同步开发中，待产品上线后，咕咚的股份将以“积分”的形式显示在咕咚小程序及APP产品上。
+                    咕咚平台小程序与APP产品正在同步开发中，待平台上线之后，咕咚的股份将以“积分”的形式显示在平台上。
                   </p>
                   <p>
-                    本“积分”发行总量为1亿份（永无增发），其中咕咚创始团队仅持有10%，28%预留给投资机构及团队后续扩员，2%免费空投给最早来到这里的1万名种子用户，剩余60%将分阶段、分批次免费赠予全生态用户！早来者会获得多一些，晚来者会获得少一些。{" "}
+                    咕咚“积分”的总量固定为1亿份，其中创始团队仅占比10%；28%用于对接金融机构投资，以及团队后续扩员；2%免费空投给最早来到这里的前1万名用户；剩余60%将分阶段、分批次免费赠予全生态用户！早来者会获得多一些，晚来者会获得少一些。
                   </p>
                 </div>
                 <div className=" w-full">
@@ -189,10 +187,10 @@ export default function Home() {
                   shadow-2xl"
               >
                 <div className=" p-2 mr-6 w-full rounded-md text-white font-bold text-base">
+                  <p>咕咚原始股份免费申请方式如下：</p>
                   <p>
-                    在此阶段，咕咚将2%的原始股份（200万股）免费空投给最早来到这里的1万名参与者（每人最多200股）
+                    备注：空投份额为200万股（占总股份的2%），每人最多可申请200股。
                   </p>
-                  <p>申请方式如下：</p>
                   <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
                     <div>
                       1、请完成以下信息
