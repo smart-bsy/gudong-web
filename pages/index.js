@@ -63,7 +63,7 @@ export default function Home() {
       </Head>
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between">
-          <Image className=" w-60 my-5 mx-10" src={logo} alt="logo"></Image>
+          <Image className=" w-60 my-10" src={logo} alt="logo"></Image>
           <div className=" inline-flex items-center justify-around w-96 text-white px-5 font-mono font-bold mr-2">
             <span className="text-4xl">股份</span>
             <span className=" text-center">
@@ -228,12 +228,13 @@ export default function Home() {
               >
                 <div style={{ "background-color": "rgba(254,226,226,0.3)" }}>
                   <div className=" p-6 mr-6 w-full rounded-md text-black">
-                    <div className=" border-b-2 pb-8 mb-8 border-gray-400 border-dashed">
+                    <div className=" pb-4 mb-4 border-gray-400 border-dashed">
                       <p className="  font-bold text-center text-5xl">
-                        <span className=" text-fuchsia-400">咕咚</span>
-                        <span className=" text-purple-800">股份免费申请</span>
+                        <span className=" text-purple-800">
+                          咕咚股份免费申请
+                        </span>
                       </p>
-                      <p className=" text-4xl text-center mt-2">
+                      <p className=" text-4xl font-bold text-center mt-2">
                         【空投份额为200万股（占总股份的2%），每人最多可申请200股】
                       </p>
                     </div>
@@ -241,17 +242,17 @@ export default function Home() {
                       style={{
                         "background-color": "rgba(254,226,226,0.3)",
                       }}
-                      className=" mt-5 p-5 shadow-2xl rounded-md border-gray-400  "
+                      className=" mt-10 rounded-md shadow-2xl border-gray-400 pb-5 text-black"
                     >
-                      <div className=" font-bold">
+                      <div className=" font-bold p-5">
                         1、请完成以下信息
-                        <span className=" font-bold text-fuchsia-400">
+                        <span className=" font-bold text-purple-800">
                           （+50股）
                         </span>
                       </div>
-                      <div>
+                      <div className=" p-5">
                         <form action="">
-                          <div className="  p-2 mt-2 text-gray-700">
+                          <div className=" mt-2 text-gray-700">
                             <label className=" block">
                               咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
                             </label>
@@ -291,7 +292,7 @@ export default function Home() {
                     >
                       <div className=" font-bold p-5">
                         2、请完成以下分享
-                        <span className=" font-bold text-fuchsia-400">
+                        <span className=" font-bold text-purple-800">
                           （+50股）
                         </span>
                       </div>
@@ -309,7 +310,7 @@ export default function Home() {
                                   即将面世！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
                                   <a
                                     href="https://www.gudong.shop/"
-                                    className=" text-blue-500 underline-offset-1"
+                                    className="  text-blue-600 underline-offset-1"
                                   >
                                     https://www.gudong.shop/
                                   </a>
@@ -373,7 +374,7 @@ export default function Home() {
                     >
                       <div className=" font-bold p-5">
                         3、请完成以下分享
-                        <span className=" font-bold text-fuchsia-400">
+                        <span className=" font-bold text-purple-800">
                           （+100股）
                         </span>
                       </div>
@@ -391,7 +392,7 @@ export default function Home() {
                                   将于X日X点正式上线！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
                                   <a
                                     href="https://www.gudong.shop/"
-                                    className=" text-blue-500 underline-offset-1"
+                                    className=" text-blue-600 underline-offset-1"
                                   >
                                     https://www.gudong.shop/
                                   </a>
