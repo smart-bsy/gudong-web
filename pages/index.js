@@ -223,93 +223,98 @@ export default function Home() {
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
                 className=" md:flex md:flex-row md:justify-between md:items-center
-                             flex flex-col justify-between items-center p-6
+                             flex flex-col justify-between items-center
                   shadow-2xl"
               >
-                <div className=" p-2 mr-6 w-full rounded-md text-black">
-                  <p className="  font-bold  text-4xl">
-                    咕咚原始股份免费申请方式如下：
-                  </p>
-                  <p className=" text-4xl">
-                    备注：空投份额为200万股（占总股份的2%），每人最多可申请200股。
-                  </p>
-                  <div className=" mt-5 border-b-2 border-gray-400 border-dashed pb-5">
-                    <div className=" font-bold">
-                      1、请完成以下信息
-                      <span className=" font-bold text-fuchsia-400">
-                        （+50股）
-                      </span>
+                <div style={{ "background-color": "rgba(254,226,226,0.3)" }}>
+                  <div className=" p-6 mr-6 w-full rounded-md text-black">
+                    <div className=" border-b-2 pb-8 mb-8 border-gray-400 border-dashed">
+                      <p className="  font-bold text-center text-5xl">
+                        <span className=" text-fuchsia-400">咕咚</span>
+                        <span className=" text-purple-800">股份免费申请</span>
+                      </p>
+                      <p className=" text-4xl text-center mt-2">
+                        【空投份额为200万股（占总股份的2%），每人最多可申请200股】
+                      </p>
                     </div>
-                    <div>
-                      <form action="">
-                        <div
-                          style={{
-                            "background-color": "rgba(254,226,226,0.3)",
-                          }}
-                          className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
-                        >
-                          <label className=" block">
-                            咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
-                          </label>
-                          <div className=" text-left mt-3">
-                            <input
-                              className=" ml-2 text-4xl"
-                              type="radio"
-                              name="sex"
-                              value="male"
-                            />
-                            <span className="text-4xl mr-16 px-3 ">买家</span>
-                            <input
-                              className="text-4xl"
-                              type="radio"
-                              name="sex"
-                              value="female"
-                            />
-                            <span className="text-4xl px-3">卖家</span>
-                            <button
-                              onClick={(event) => {
-                                event.preventDefault();
-                              }}
-                              className=" ml-3 block bg-indigo-600 px-3 py-1 mt-2 shadow-2xl rounded-md font-bold text-white"
-                            >
-                              提交
-                            </button>
+                    <div
+                      style={{
+                        "background-color": "rgba(254,226,226,0.3)",
+                      }}
+                      className=" mt-5 p-5 shadow-2xl rounded-md border-gray-400  "
+                    >
+                      <div className=" font-bold">
+                        1、请完成以下信息
+                        <span className=" font-bold text-fuchsia-400">
+                          （+50股）
+                        </span>
+                      </div>
+                      <div>
+                        <form action="">
+                          <div className="  p-2 mt-2 text-gray-700">
+                            <label className=" block">
+                              咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
+                            </label>
+                            <div className=" text-left mt-3">
+                              <input
+                                className=" ml-2 text-9xl"
+                                type="radio"
+                                name="sex"
+                                value="male"
+                              />
+                              <span className="text-4xl mr-16 px-3 ">买家</span>
+                              <input
+                                className=" text-9xl"
+                                type="radio"
+                                name="sex"
+                                value="female"
+                              />
+                              <span className="text-4xl px-3">卖家</span>
+                              <button
+                                onClick={(event) => {
+                                  event.preventDefault();
+                                }}
+                                className=" mt-5 ml-3 block bg-indigo-500 px-3 py-1 shadow-2xl rounded-md text-white"
+                              >
+                                提 交
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
-                  </div>
-                  <div className=" mt-5 border-b-2 border-gray-400 pb-5 border-dashed text-black">
-                    <div className=" font-bold">
-                      2、请完成以下分享
-                      <span className=" font-bold text-fuchsia-400">
-                        （+50股）
-                      </span>
-                    </div>
-                    <div>
-                      <form action="">
-                        <div>
-                          <label className="">
-                            <p>
-                              请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
-                            </p>
-                            <div
-                              style={{
-                                "background-color": "rgba(254,226,226,0.3)",
-                              }}
-                              className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
-                            >
-                              <p>
-                                一个即将打破阿里/京东等巨头垄断的新电商平台
-                                (“咕咚”)
-                                即将面世！人人皆可免费入股！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
-                                <a
-                                  href="https://www.gudong.shop/"
-                                  className=" text-blue-500 underline-offset-1"
-                                >
-                                  https://www.gudong.shop/
-                                </a>
-                                <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                    <div
+                      style={{
+                        "background-color": "rgba(254,226,226,0.3)",
+                      }}
+                      className=" mt-10 rounded-md shadow-2xl border-gray-400 pb-5 text-black"
+                    >
+                      <div className=" font-bold p-5">
+                        2、请完成以下分享
+                        <span className=" font-bold text-fuchsia-400">
+                          （+50股）
+                        </span>
+                      </div>
+                      <div>
+                        <form action="">
+                          <div>
+                            <label className="">
+                              <p className=" p-5">
+                                请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
+                              </p>
+                              <div className=" mt-2 text-gray-700 ">
+                                <p className=" bg-blue-400 p-5">
+                                  一个即将打破阿里/京东等巨头垄断的新电商平台
+                                  (“咕咚”)
+                                  即将面世！人人皆可免费入股！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
+                                  <a
+                                    href="https://www.gudong.shop/"
+                                    className=" text-blue-500 underline-offset-1"
+                                  >
+                                    https://www.gudong.shop/
+                                  </a>
+                                </p>
+                                <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white px-3 py-1 mt-3">
                                   <svg
                                     t="1669548772173"
                                     class="icon"
@@ -317,8 +322,8 @@ export default function Home() {
                                     version="1.1"
                                     xmlns="http://www.w3.org/2000/svg"
                                     p-id="3657"
-                                    width="50"
-                                    height="50"
+                                    width="45"
+                                    height="45"
                                     className="inline"
                                   >
                                     <path
@@ -334,113 +339,113 @@ export default function Home() {
                                   </svg>
                                   <span>复制</span>
                                 </button>
-                              </p>
-                            </div>
-                            <div>
-                              <Upload
-                                name="avatar"
-                                listType="picture-card"
-                                className="avatar-uploader mt-5 ml-3"
-                                showUploadList={false}
-                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                beforeUpload={beforeUpload}
-                                onChange={handleChange}
-                              >
-                                {imageUrl ? (
-                                  <img src={imageUrl} alt="avatar" />
-                                ) : (
-                                  uploadButton
-                                )}
-                              </Upload>
-                            </div>
-                            <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                              上传截图
-                            </button>
-                          </label>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <div className=" mt-5 pb-5 ">
-                    <div className=" font-bold text-black">
-                      3、请完成以下分享
-                      <span className=" font-bold text-fuchsia-400">
-                        （+100股）
-                      </span>
-                    </div>
-                    <div>
-                      <form action="">
-                        <div>
-                          <label className=" block">
-                            <p>
-                              请将以下内容分享至3个以上微信群，总人数达1000人以上并截图上传。
-                            </p>
-                            <div
-                              style={{
-                                "background-color": "rgba(254,226,226,0.3)",
-                              }}
-                              className=" shadow-2xl p-2 mt-2 rounded-md text-gray-700"
-                            >
-                              <p>
-                                一个即将打破阿里/京东等巨头垄断的新电商平台
-                                (“咕咚”)
-                                将于X日X点正式上线！人人皆可免费入股！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
-                                <a
-                                  href="https://www.gudong.shop/"
-                                  className=" text-blue-500 underline-offset-1"
+                              </div>
+                              <div>
+                                <Upload
+                                  name="avatar"
+                                  listType="picture-card"
+                                  className="avatar-uploader mt-5 ml-3"
+                                  showUploadList={false}
+                                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                  beforeUpload={beforeUpload}
+                                  onChange={handleChange}
                                 >
-                                  https://www.gudong.shop/
-                                </a>
-                                <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                                  <svg
-                                    t="1669548772173"
-                                    class="icon"
-                                    viewBox="0 0 1024 1024"
-                                    version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    p-id="3657"
-                                    width="50"
-                                    height="50"
-                                    className="inline"
-                                  >
-                                    <path
-                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
-                                      p-id="3658"
-                                      fill="#ffffff"
-                                    ></path>
-                                    <path
-                                      d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
-                                      p-id="3659"
-                                      fill="#ffffff"
-                                    ></path>
-                                  </svg>
-                                  <span>复制</span>
-                                </button>
+                                  {imageUrl ? (
+                                    <img src={imageUrl} alt="avatar" />
+                                  ) : (
+                                    uploadButton
+                                  )}
+                                </Upload>
+                              </div>
+                              <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
+                                上传截图
+                              </button>
+                            </label>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        "background-color": "rgba(254,226,226,0.3)",
+                      }}
+                      className=" mt-10 p-5 rounded-md shadow-2xl border-gray-400 pb-5 mb-10 text-black"
+                    >
+                      <div className=" font-bold text-black">
+                        3、请完成以下分享
+                        <span className=" font-bold text-fuchsia-400">
+                          （+100股）
+                        </span>
+                      </div>
+                      <div>
+                        <form action="">
+                          <div>
+                            <label className=" block">
+                              <p>
+                                请将以下内容分享至3个以上微信群，总人数达1000人以上并截图上传。
                               </p>
-                            </div>
-                            <div>
-                              <Upload
-                                name="avatar"
-                                listType="picture-card"
-                                className="avatar-uploader mt-5 ml-3"
-                                showUploadList={false}
-                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                beforeUpload={beforeUpload}
-                                onChange={handleChange}
-                              >
-                                {imageUrl ? (
-                                  <img src={imageUrl} alt="avatar" />
-                                ) : (
-                                  uploadButton
-                                )}
-                              </Upload>
-                            </div>
-                            <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                              上传截图
-                            </button>
-                          </label>
-                        </div>
-                      </form>
+                              <div className="  p-2 mt-2 text-gray-700">
+                                <p>
+                                  一个即将打破阿里/京东等巨头垄断的新电商平台
+                                  (“咕咚”)
+                                  将于X日X点正式上线！人人皆可免费入股！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
+                                  <a
+                                    href="https://www.gudong.shop/"
+                                    className=" text-blue-500 underline-offset-1"
+                                  >
+                                    https://www.gudong.shop/
+                                  </a>
+                                  <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                                    <svg
+                                      t="1669548772173"
+                                      class="icon"
+                                      viewBox="0 0 1024 1024"
+                                      version="1.1"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      p-id="3657"
+                                      width="50"
+                                      height="50"
+                                      className="inline"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
+                                        p-id="3658"
+                                        fill="#ffffff"
+                                      ></path>
+                                      <path
+                                        d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
+                                        p-id="3659"
+                                        fill="#ffffff"
+                                      ></path>
+                                    </svg>
+                                    <span>复制</span>
+                                  </button>
+                                </p>
+                              </div>
+                              <div>
+                                <Upload
+                                  name="avatar"
+                                  listType="picture-card"
+                                  className="avatar-uploader mt-5 ml-3"
+                                  showUploadList={false}
+                                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                  beforeUpload={beforeUpload}
+                                  onChange={handleChange}
+                                >
+                                  {imageUrl ? (
+                                    <img src={imageUrl} alt="avatar" />
+                                  ) : (
+                                    uploadButton
+                                  )}
+                                </Upload>
+                              </div>
+                              <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                                上传截图
+                              </button>
+                            </label>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
