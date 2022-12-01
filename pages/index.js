@@ -274,7 +274,7 @@ export default function Home() {
                                 onClick={(event) => {
                                   event.preventDefault();
                                 }}
-                                className=" mt-5 ml-3 block bg-indigo-500 px-3 py-1 shadow-2xl rounded-md text-white"
+                                className=" mb-3 mt-5 block bg-indigo-500 px-3 py-1 shadow-2xl rounded-md text-white"
                               >
                                 提 交
                               </button>
@@ -302,11 +302,11 @@ export default function Home() {
                               <p className=" p-5">
                                 请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
                               </p>
-                              <div className=" mt-2 text-gray-700 ">
-                                <p className=" bg-blue-400 p-5">
+                              <div className=" mt-2 p-5 text-gray-700 ">
+                                <p className=" bg-blue-400">
                                   一个即将打破阿里/京东等巨头垄断的新电商平台
                                   (“咕咚”)
-                                  即将面世！人人皆可免费入股！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
+                                  即将面世！本轮空投参与瓜分50万原始股份！限1万人，先到先得！
                                   <a
                                     href="https://www.gudong.shop/"
                                     className=" text-blue-500 underline-offset-1"
@@ -314,7 +314,7 @@ export default function Home() {
                                     https://www.gudong.shop/
                                   </a>
                                 </p>
-                                <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white px-3 py-1 mt-3">
+                                <button className=" rounded-md flex flex-row justify-between bg-blue-400 text-white px-3 py-1 mt-8">
                                   <svg
                                     t="1669548772173"
                                     class="icon"
@@ -344,7 +344,7 @@ export default function Home() {
                                 <Upload
                                   name="avatar"
                                   listType="picture-card"
-                                  className="avatar-uploader mt-5 ml-3"
+                                  className="avatar-uploader mt-5 ml-6"
                                   showUploadList={false}
                                   action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                   beforeUpload={beforeUpload}
@@ -357,7 +357,7 @@ export default function Home() {
                                   )}
                                 </Upload>
                               </div>
-                              <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
+                              <button className=" mb-5 ml-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
                                 上传截图
                               </button>
                             </label>
@@ -369,9 +369,9 @@ export default function Home() {
                       style={{
                         "background-color": "rgba(254,226,226,0.3)",
                       }}
-                      className=" mt-10 p-5 rounded-md shadow-2xl border-gray-400 pb-5 mb-10 text-black"
+                      className=" mb-7 mt-10 rounded-md shadow-2xl border-gray-400 pb-5 text-black"
                     >
-                      <div className=" font-bold text-black">
+                      <div className=" font-bold p-5">
                         3、请完成以下分享
                         <span className=" font-bold text-fuchsia-400">
                           （+100股）
@@ -380,53 +380,53 @@ export default function Home() {
                       <div>
                         <form action="">
                           <div>
-                            <label className=" block">
-                              <p>
+                            <label className="">
+                              <p className=" p-5">
                                 请将以下内容分享至3个以上微信群，总人数达1000人以上并截图上传。
                               </p>
-                              <div className="  p-2 mt-2 text-gray-700">
-                                <p>
+                              <div className=" mt-2 p-5 text-gray-700 ">
+                                <p className="  bg-blue-400">
                                   一个即将打破阿里/京东等巨头垄断的新电商平台
                                   (“咕咚”)
-                                  将于X日X点正式上线！人人皆可免费入股！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
+                                  将于X日X点正式上线！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
                                   <a
                                     href="https://www.gudong.shop/"
                                     className=" text-blue-500 underline-offset-1"
                                   >
                                     https://www.gudong.shop/
                                   </a>
-                                  <button className=" ml-3 rounded-md flex flex-row justify-between bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
-                                    <svg
-                                      t="1669548772173"
-                                      class="icon"
-                                      viewBox="0 0 1024 1024"
-                                      version="1.1"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      p-id="3657"
-                                      width="50"
-                                      height="50"
-                                      className="inline"
-                                    >
-                                      <path
-                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
-                                        p-id="3658"
-                                        fill="#ffffff"
-                                      ></path>
-                                      <path
-                                        d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
-                                        p-id="3659"
-                                        fill="#ffffff"
-                                      ></path>
-                                    </svg>
-                                    <span>复制</span>
-                                  </button>
                                 </p>
+                                <button className=" rounded-md flex flex-row justify-between bg-blue-400 text-white px-3 py-1 mt-8">
+                                  <svg
+                                    t="1669548772173"
+                                    class="icon"
+                                    viewBox="0 0 1024 1024"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    p-id="3657"
+                                    width="45"
+                                    height="45"
+                                    className="inline"
+                                  >
+                                    <path
+                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
+                                      p-id="3658"
+                                      fill="#ffffff"
+                                    ></path>
+                                    <path
+                                      d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
+                                      p-id="3659"
+                                      fill="#ffffff"
+                                    ></path>
+                                  </svg>
+                                  <span>复制</span>
+                                </button>
                               </div>
                               <div>
                                 <Upload
                                   name="avatar"
                                   listType="picture-card"
-                                  className="avatar-uploader mt-5 ml-3"
+                                  className="avatar-uploader mt-5 ml-6"
                                   showUploadList={false}
                                   action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                   beforeUpload={beforeUpload}
@@ -439,7 +439,7 @@ export default function Home() {
                                   )}
                                 </Upload>
                               </div>
-                              <button className=" ml-3 rounded-md block text-center bg-indigo-500 text-white font-bold px-3 py-1 mt-3">
+                              <button className=" ml-5 mb-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
                                 上传截图
                               </button>
                             </label>
@@ -455,63 +455,69 @@ export default function Home() {
           <div className=" mt-10 rounded-md text-4xl">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:justify-start md:items-start md:p-5
+                style={{
+                  "background-color": "rgba(254,226,226,0.3)",
+                }}
+              >
+                <div
+                  style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                  className=" md:flex md:justify-start md:items-start md:p-5
                              flex flex-col justify-between items-center text-black p-6
                   shadow-2xl"
-              >
-                <p className=" font-bold text-5xl text-purple-800">
-                  Q&A 常见问题解答
-                </p>
-                <div className="  mt-6">
-                  <p className=" font-bold">Q: 本平台主营什么商品?</p>
-                  <p className=" mt-1 ">
-                    A:
-                    本平台上线后将主营年轻人的消费品，如盲盒、手办、潮玩、服饰、化妆品等。
+                >
+                  <p className=" font-bold text-5xl text-purple-800">
+                    Q&A 常见问题解答
                   </p>
-                </div>
-                <div className="  mt-6 ">
-                  <p className=" font-bold">Q: 本平台股份有何用途?</p>
-                  <p className=" mt-1 ">
-                    <span>A:</span>
-                    本平台在此谈及的“股份”属于真正意义上的原始股，待平台小程序/APP上线后将以“积分”的形式显示在平台上，该“积分”将赋予以下五项功能和用户权益：
-                  </p>
-                  <ol>
-                    <li className=" mt-3">
-                      1.
-                      本平台未来上市后，持有该“积分”可直接按同等比例换算成平台的股票；
-                    </li>
-                    <li className=" mt-3">
-                      2.
-                      本平台实现盈利后，持有该“积分”者皆可获得永久性分红，按年/季/月/周/日进行；
-                    </li>
-                    <li className=" mt-3">
-                      3.
-                      为了合规起见，本平台仅会开通股份“转赠”功能以支持用户间线下交易；
-                    </li>
-                    <li className=" mt-3">
-                      4.
-                      如果本平台上的卖家选择开通【“积分”支付】，则买家即可使用“积分”消费该卖家的商品，而本平台也会接受卖家使用“积分”抵扣交易佣金和广告费等；
-                    </li>
-                    <li className=" mt-3">
-                      5.
-                      持有该“积分”的用户即可参加本平台在中后期发展过程中的在线化治理（如：发表提案和参与投票等）。
-                    </li>
-                  </ol>
-                </div>
-                <div className="  mt-6">
-                  <p className=" font-bold">Q: 本平台如何获得盈利?</p>
-                  <p className=" mt-1 ">
-                    A:
-                    本平台属于一个轻模式、轻运营的第三方服务商，专注为经营新潮商品的供应商和年轻的消费者群体提供精细化的服务，从中收取适当比例的服务费用，以及平台广告费等，与淘宝、京东、拼多多等平台无异。
-                  </p>
-                </div>
-                <div className="  mt-6">
-                  <p className=" font-bold">Q: 本平台“积分”如何释放?</p>
-                  <p className=" mt-1 ">
-                    A:
-                    本平台“积分”共有62%（6200万份）免费奖励给全生态用户，其中除了2%（200万份）提前奖励给最早期的1万名用户之外，余下的60%（6000万份）将均分三份，按阶段释放给全生态用户，主要奖励用户【注册/拉新】和【购物/售货】，具体分配细则详见平台上线后附带文档
-                  </p>
+                  <div className="  mt-6">
+                    <p className=" font-bold">Q: 本平台主营什么商品?</p>
+                    <p className=" mt-1 ">
+                      A:
+                      本平台上线后将主营年轻人的消费品，如盲盒、手办、潮玩、服饰、化妆品等。
+                    </p>
+                  </div>
+                  <div className="  mt-6 ">
+                    <p className=" font-bold">Q: 本平台股份有何用途?</p>
+                    <p className=" mt-1 ">
+                      <span>A:</span>
+                      本平台在此谈及的“股份”属于真正意义上的原始股，待平台小程序/APP上线后将以“积分”的形式显示在平台上，该“积分”将赋予以下五项功能和用户权益：
+                    </p>
+                    <ol>
+                      <li className=" mt-3">
+                        1.
+                        本平台未来上市后，持有该“积分”可直接按同等比例换算成平台的股票；
+                      </li>
+                      <li className=" mt-3">
+                        2.
+                        本平台实现盈利后，持有该“积分”者皆可获得永久性分红，按年/季/月/周/日进行；
+                      </li>
+                      <li className=" mt-3">
+                        3.
+                        为了合规起见，本平台仅会开通股份“转赠”功能以支持用户间线下交易；
+                      </li>
+                      <li className=" mt-3">
+                        4.
+                        如果本平台上的卖家选择开通【“积分”支付】，则买家即可使用“积分”消费该卖家的商品，而本平台也会接受卖家使用“积分”抵扣交易佣金和广告费等；
+                      </li>
+                      <li className=" mt-3">
+                        5.
+                        持有该“积分”的用户即可参加本平台在中后期发展过程中的在线化治理（如：发表提案和参与投票等）。
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="  mt-6">
+                    <p className=" font-bold">Q: 本平台如何获得盈利?</p>
+                    <p className=" mt-1 ">
+                      A:
+                      本平台属于一个轻模式、轻运营的第三方服务商，专注为经营新潮商品的供应商和年轻的消费者群体提供精细化的服务，从中收取适当比例的服务费用，以及平台广告费等，与淘宝、京东、拼多多等平台无异。
+                    </p>
+                  </div>
+                  <div className="  mt-6">
+                    <p className=" font-bold">Q: 本平台“积分”如何释放?</p>
+                    <p className=" mt-1 ">
+                      A:
+                      本平台“积分”共有62%（6200万份）免费奖励给全生态用户，其中除了2%（200万份）提前奖励给最早期的1万名用户之外，余下的60%（6000万份）将均分三份，按阶段释放给全生态用户，主要奖励用户【注册/拉新】和【购物/售货】，具体分配细则详见平台上线后附带文档
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -693,58 +699,42 @@ export default function Home() {
           <div className=" mt-10 rounded-md ">
             <div class={styles.box}>
               <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className="flex flex-col justify-start items-start p-5
-                  shadow-2xl"
+                style={{
+                  "background-color": "rgba(254,226,226,0.3)",
+                }}
               >
-                <div className=" ml-5 font-bold text-4xl">
-                  联系方式
-                  <div className=" mt-1 text-3xl font-bold">
-                    <svg
-                      t="1669554731645"
-                      className=" inline-block icon mr-2"
-                      viewBox="0 0 1206 1024"
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      p-id="6738"
-                      width="20"
-                      height="20"
-                    >
-                      <path
-                        d="M982.749557 0.001605H223.417832A224.340714 224.340714 0 0 0 0 222.536679v578.888121a224.340714 224.340714 0 0 0 223.417832 222.535075h759.331725a224.340714 224.340714 0 0 0 223.417831-222.535075V222.536679A222.615325 222.615325 0 0 0 982.749557 0.001605zM223.417832 88.758833h759.331725a132.413586 132.413586 0 0 1 114.357187 64.922782l-437.366085 353.704775a88.275724 88.275724 0 0 1-111.708916 0L110.665657 153.681615a128.722055 128.722055 0 0 1 112.752175-64.922782z m759.331725 845.159803H223.417832a134.540228 134.540228 0 0 1-134.299476-133.777846V253.031929l401.614417 324.573786a177.434205 177.434205 0 0 0 111.708916 39.724076 174.745808 174.745808 0 0 0 111.708916-39.724076l401.614417-324.573786v547.108861a131.731455 131.731455 0 0 1-133.015465 133.777846z"
-                        p-id="6739"
-                        fill="#f4ea2a"
-                      ></path>
-                    </svg>
-                    123456789@qq.com
-                  </div>
-                </div>
-                <div>
-                  <p className=" ml-5 font-bold mt-3 text-4xl">加入社群</p>
-                  <div className=" flex flex-row justify-start  mt-3 items-center">
-                    <div>
-                      <Image
-                        className=" mx-5 w-20 rounded-md"
-                        src={code}
-                        alt="code"
-                      ></Image>
-                      <p className=" text-center mt-1">微信①群</p>
-                    </div>
-                    <div>
-                      <Image
-                        className=" mx-5 w-20 rounded-md"
-                        src={code}
-                        alt="code"
-                      ></Image>
-                      <p className=" text-center  mt-1">微信②群</p>
-                    </div>
-                    <div className=" text-center">
-                      <Image
-                        className=" mx-5 w-20 rounded-md"
-                        src={code}
-                        alt="code"
-                      ></Image>
-                      <p className=" text-center  mt-1">微信③群</p>
+                <div
+                  style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                  className="flex flex-col justify-start items-start p-5
+                  shadow-2xl"
+                >
+                  <div>
+                    <p className=" ml-5 font-bold mt-3 text-4xl">加入社群</p>
+                    <div className=" flex flex-row justify-start  mt-3 items-center">
+                      <div>
+                        <Image
+                          className=" mx-5 w-20 rounded-md"
+                          src={code}
+                          alt="code"
+                        ></Image>
+                        <p className=" text-center mt-1">微信①群</p>
+                      </div>
+                      <div>
+                        <Image
+                          className=" mx-5 w-20 rounded-md"
+                          src={code}
+                          alt="code"
+                        ></Image>
+                        <p className=" text-center  mt-1">微信②群</p>
+                      </div>
+                      <div className=" text-center">
+                        <Image
+                          className=" mx-5 w-20 rounded-md"
+                          src={code}
+                          alt="code"
+                        ></Image>
+                        <p className=" text-center  mt-1">微信③群</p>
+                      </div>
                     </div>
                   </div>
                 </div>
