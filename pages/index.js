@@ -759,7 +759,7 @@ export default function Home() {
                           src={code}
                           alt="code"
                         ></Image>
-                        <p className=" text-center  mt-1">微信③群</p>
+                        <p className=" text-center  mt-1">微信③群 </p>
                       </div>
                     </div>
                   </div>
