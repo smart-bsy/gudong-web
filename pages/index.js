@@ -10,10 +10,12 @@ import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { Upload } from "antd";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
+  const [menuToggle, setMenuToggle] = useState(false);
 
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
@@ -62,14 +64,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
-        <div className=" md:w-3/4 m-auto flex flex-row  justify-between">
+        <div className=" md:w-3/4 m-auto flex flex-row  justify-between items-center">
           <Image className=" w-60 my-10 ml-5" src={logo} alt="logo"></Image>
-          <div className=" inline-flex items-center justify-around w-96 text-white px-5 font-mono font-bold mr-2">
-            <span className="text-4xl">股份</span>
-            <span className=" text-center">
-              <Image src={computer} className=" rounded-full w-16"></Image>
-              <div className=" mt-3">登录</div>
-            </span>
+          <div
+            onClick={() => {
+              setMenuToggle(!menuToggle);
+            }}
+          >
+            {menuToggle ? (
+              <>
+                <AiOutlineClose className=" text-7xl w-40 text-white font-bold" />
+              </>
+            ) : (
+              <AiOutlineMenu className=" text-7xl w-40 text-white font-bold" />
+            )}
           </div>
         </div>
         <div className=" md:w-3/4 clear-both flex flex-col  w-[54rem] m-auto">
@@ -89,7 +97,7 @@ export default function Home() {
                   </p>
                   <p>
                     中国将出现一个
-                    <span className="font-bold  text-5xl text-purple-800">
+                    <span className="font-bold  text-5xl text-cyan-300">
                       全新的
                     </span>
                     电子商务平台
@@ -229,14 +237,14 @@ export default function Home() {
                 <div style={{ "background-color": "rgba(254,226,226,0.3)" }}>
                   <div className=" p-6 mr-6 w-full rounded-md text-black">
                     <div className=" pb-4 mb-4 border-gray-400 border-dashed">
-                      <p className="  font-bold text-center text-5xl">
+                      <p className="  font-bold text-start text-5xl">
                         <span className=" text-purple-800">
                           咕咚股份免费申请
                         </span>
                       </p>
-                      <p className=" text-4xl font-bold text-center mt-2">
+                      {/* <p className=" text-4xl font-bold text-center mt-2">
                         【空投份额为200万股（占总股份的2%），每人最多可申请200股】
-                      </p>
+                      </p> */}
                     </div>
                     <div
                       style={{
@@ -456,6 +464,163 @@ export default function Home() {
           <div className=" mt-10 rounded-md text-4xl">
             <div class={styles.box}>
               <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" text-start text-white font-bold md:p-5 p-6 text-5xl "
+              >
+                咕咚平台路线图
+              </div>
+              <div
+                style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                className=" md:flex md:flex-row md:justify-between md:items-center md:p-5
+                             flex flex-col justify-between items-start  
+                  shadow-2xl"
+              >
+                <ol className="relative border-l text-4xl ml-10 mt-5 border-gray-200 dark:border-gray-700">
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="flex font-bold ml-7  items-center mb-1 text-cyan-300 dark:text-white">
+                      官网推出并空投
+                    </h3>
+                    <p class="mb-4 ml-7 text-white dark:text-gray-400">
+                      在此阶段，咕咚创始团队优先将官网推出，并将咕咚平台2%的原始股份（200万股）免费空投给最早来到这里的前1万名用户，携手1万名共同创始人，将咕咚的创新理念与宏大愿景传播到市场。
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-cyan-300 dark:text-white">
+                      小程序/app上线
+                    </h3>
+                    <p class="mb-4 ml-7  text-white dark:text-gray-400">
+                      在此阶段，咕咚平台将进入正常的商品交易状态，同时咕咚平台的原始股份（总量1亿股）将以“积分”的形式映射在咕咚小程序/app产品上，并开始面向全生态用户分批赠送余下的60%原始股份。
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-cyan-300 dark:text-white">
+                      盈利并开始分红
+                    </h3>
+                    <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
+                      在此阶段，咕咚平台将从出售广告资源和收取商品交易/服务佣金等方面获得正常的商业收益，随即正式启动原始股东持股分红！追求按月/周/日进行，若平台收益不断增加，则分红周期将不断缩短。
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-4xl  ml-7 font-bold text-cyan-300 dark:text-white">
+                      治理性NFT发布
+                    </h3>
+                    <p class="mb-4 ml-7 text-4xl font-normal text-white dark:text-gray-400">
+                      在此阶段，咕咚平台将推出基于Web3.0生态理念的新生物种——NFT（非同质化权益证明），为咕咚平台所有的原始股东及全生态用户提供一种全新的身份象征和权益证明，具体细则届时公布。
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-4xl ml-7  font-bold text-cyan-300 dark:text-white">
+                      在线化社区治理
+                    </h3>
+                    <p class="mb-4 ml-7  text-4xl font-normal text-white dark:text-gray-400">
+                      在此阶段，咕咚平台所有的原始股东可参与咕咚平台的日常事务治理，例如：持有咕咚的股份或NFT即可在咕咚社区参与咕咚平台各种大小事务提案、投票等决策权益，咕咚平台将逐步实现多中心化治理。
+                    </p>
+                  </li>
+                  <li className="mb-10 ml-6">
+                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                      <svg
+                        aria-hidden="true"
+                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </span>
+                    <h3 className="mb-1 text-4xl ml-7  font-bold text-cyan-300 dark:text-white">
+                      进入到上市程序
+                    </h3>
+                    <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
+                      在此阶段，咕咚平台的各项数据达到上市标准并正式启动上市登记，咕咚平台上市成功时将对应当前的“积分”比例发行总量为1亿份的咕咚股票，届时持有咕咚积分（原始股份）的所有用户届可按同等比例兑换成咕咚的股票。
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-10 rounded-md text-4xl">
+            <div class={styles.box}>
+              <div
                 style={{
                   "background-color": "rgba(254,226,226,0.3)",
                 }}
@@ -489,7 +654,7 @@ export default function Home() {
                       </li>
                       <li className=" mt-3">
                         2.
-                        本平台实现盈利后，持有该“积分”者皆可获得永久性分红，按年/季/月/周/日进行；
+                        本平台实现盈利后，持有该“积分”者皆可获得永久性分红，追求按年/季/月/周/日进行；
                       </li>
                       <li className=" mt-3">
                         3.
@@ -520,157 +685,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className=" mt-10 rounded-md text-4xl">
-            <div class={styles.box}>
-              <div
-                style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" md:flex md:flex-row md:justify-between md:items-center md:p-5
-                             flex flex-col justify-between items-start  
-                  shadow-2xl"
-              >
-                <ol className="relative border-l text-4xl ml-10 mt-5 border-gray-200 dark:border-gray-700">
-                  <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                      <svg
-                        aria-hidden="true"
-                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <h3 className="flex font-bold ml-7  items-center mb-1 text-purple-800 dark:text-white">
-                      官网推出并空投
-                    </h3>
-                    <p class="mb-4 ml-7 text-white dark:text-gray-400">
-                      在此阶段，咕咚创始团队优先将官网推出，并将咕咚平台2%的原始股份（200万股）免费空投给最早来到这里的前1万名用户，携手1万名共同创始人，将咕咚的创新理念与宏大愿景传播到市场。
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                      <svg
-                        aria-hidden="true"
-                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-purple-800 dark:text-white">
-                      小程序/app上线
-                    </h3>
-                    <p class="mb-4 ml-7  text-white dark:text-gray-400">
-                      在此阶段，咕咚平台将进入正常的商品交易状态，同时咕咚平台的原始股份（总量1亿股）将以“积分”的形式映射在咕咚小程序/app产品上，并开始面向全生态用户分批赠送余下的60%原始股份。
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                      <svg
-                        aria-hidden="true"
-                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-purple-800 dark:text-white">
-                      盈利并开始分红
-                    </h3>
-                    <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
-                      在此阶段，咕咚平台将从出售广告资源和收取商品交易/服务佣金等方面获得正常的商业收益，随即正式启动原始股东持股分红！追求按月/周/日进行，若平台收益不断增加，则分红周期将不断缩短。
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                      <svg
-                        aria-hidden="true"
-                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <h3 className="mb-1 text-4xl  ml-7 font-bold text-purple-800 dark:text-white">
-                      治理性NFT发布
-                    </h3>
-                    <p class="mb-4 ml-7 text-4xl font-normal text-white dark:text-gray-400">
-                      在此阶段，咕咚平台将推出基于Web3.0生态理念的新生物种——NFT（非同质化权益证明），为咕咚平台所有的原始股东及全生态用户提供一种全新的身份象征和权益证明，具体细则届时公布。
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                      <svg
-                        aria-hidden="true"
-                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <h3 className="mb-1 text-4xl ml-7  font-bold text-purple-800 dark:text-white">
-                      在线化社区治理
-                    </h3>
-                    <p class="mb-4 ml-7  text-4xl font-normal text-white dark:text-gray-400">
-                      在此阶段，咕咚平台所有的原始股东可参与咕咚平台的日常事务治理，例如：持有咕咚的股份或NFT即可在咕咚社区参与咕咚平台各种大小事务提案、投票等决策权益，咕咚平台将逐步实现多中心化治理。
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-6">
-                    <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                      <svg
-                        aria-hidden="true"
-                        class=" w-6 h-6 text-blue-600 dark:text-blue-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <h3 className="mb-1 text-4xl ml-7  font-bold text-purple-800 dark:text-white">
-                      进入到上市程序
-                    </h3>
-                    <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
-                      在此阶段，咕咚平台的各项数据达到上市标准并正式启动上市登记，咕咚平台上市成功时将对应当前的“积分”比例发行总量为1亿份的咕咚股票，届时持有咕咚积分（原始股份）的所有用户届可按同等比例兑换成咕咚的股票。
-                    </p>
-                  </li>
-                </ol>
               </div>
             </div>
           </div>
