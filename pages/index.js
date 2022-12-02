@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import computer from "../public/images/computer.png";
+import computer3 from "../public/images/computer3.png";
 import huojian from "../public/images/huojian.png";
 import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
@@ -89,19 +90,19 @@ export default function Home() {
                   <div
                     hidden={isLogin}
                     style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                    className=" rounded-md bg-indigo-600 mt-3"
+                    className=" bg-indigo-600 mt-3 rounded-full"
                   >
                     <div
-                      className=" w-full"
+                      className=" w-full  rounded-full"
                       style={{ "background-color": "rgba(254,226,226,0.3)" }}
                     >
                       <button
                         onClick={() => {
                           setIsLogin(true);
                         }}
-                        className=" px-5 py-1 text-4xl"
+                        className="  px-5 py-1 text-4xl"
                       >
-                        登 录
+                        登录
                       </button>
                     </div>
                   </div>
@@ -146,7 +147,7 @@ export default function Home() {
                 <div className="">
                   <Image
                     className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
-                    src={computer}
+                    src={computer3}
                     alt="computer"
                   ></Image>
                 </div>
