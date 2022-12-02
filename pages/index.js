@@ -11,10 +11,12 @@ import { Upload } from "antd";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { RxAvatar } from "react-icons/rx";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
+  const [isLogin, setIsLogin] = useState(false);
   const [menuToggle, setMenuToggle] = useState(false);
 
   const beforeUpload = (file) => {
@@ -65,18 +67,49 @@ export default function Home() {
       </Head>
       <div className=" md:w-full  w-[58rem] m-auto border-l-2 border-r-2">
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between items-center">
-          <Image className=" w-60 my-10 ml-5" src={logo} alt="logo"></Image>
+          <Image className=" w-60 my-10 ml-6" src={logo} alt="logo"></Image>
           <div
             onClick={() => {
               setMenuToggle(!menuToggle);
             }}
           >
             {menuToggle ? (
-              <>
-                <AiOutlineClose className=" text-7xl w-40 text-white font-bold" />
-              </>
+              <div className=" mr-6 flex flex-row justify-between items-center">
+                <div
+                  style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                  className=" rounded-md flex h-52 w-48   flex-col justify-center items-center p-5 shadow-2xl"
+                >
+                  <RxAvatar className=" text-8xl" />
+                  <div hidden={!isLogin} className="  text-white mt-2">
+                    ID: 138****8256
+                  </div>
+                  <div hidden={!isLogin} className="  text-white mt-2">
+                    股份: xx
+                  </div>
+                  <div
+                    hidden={isLogin}
+                    style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                    className=" rounded-md bg-indigo-600 mt-3"
+                  >
+                    <div
+                      className=" w-full"
+                      style={{ "background-color": "rgba(254,226,226,0.3)" }}
+                    >
+                      <button
+                        onClick={() => {
+                          setIsLogin(true);
+                        }}
+                        className=" px-5 py-1"
+                      >
+                        登 录
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <AiOutlineClose className=" text-7xl text-white font-bold" />
+              </div>
             ) : (
-              <AiOutlineMenu className=" text-7xl w-40 text-white font-bold" />
+              <AiOutlineMenu className=" mr-6 text-7xl text-white font-bold" />
             )}
           </div>
         </div>
