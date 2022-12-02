@@ -99,7 +99,7 @@ export default function Home() {
                         onClick={() => {
                           setIsLogin(true);
                         }}
-                        className=" px-5 py-1"
+                        className=" px-5 py-1 text-4xl"
                       >
                         登 录
                       </button>
@@ -143,9 +143,9 @@ export default function Home() {
                     </span>
                   </p>
                 </div>
-                <div className=" w-full">
+                <div className="">
                   <Image
-                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
                     src={computer}
                     alt="computer"
                   ></Image>
@@ -165,9 +165,7 @@ export default function Home() {
                   <p>
                     咕咚平台主营
                     <span className="font-bold">年轻人</span>
-                    的消费品 但有一点不一样，咕咚平台将会记录每一位用
-                    户在平台上所做的任何贡献（例如：邀请来好友或者买卖商品等），
-                    并将这些贡献直接转化成咕咚的
+                    的消费品但有一点不一样，咕咚平台将会记录每一位用户在平台上所做的任何贡献（例如：邀请来好友或者买卖商品等），并将这些贡献直接转化成咕咚的
                     <span className="font-bold text-purple-800">原始股份</span>
                     ，<span className="font-bold">免费赠送</span>
                     予您。
@@ -175,7 +173,7 @@ export default function Home() {
                 </div>
                 <div className=" w-full">
                   <Image
-                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
                     src={longduan}
                     alt="loongduan"
                   ></Image>
@@ -204,7 +202,7 @@ export default function Home() {
                 </div>
                 <div className=" w-full">
                   <Image
-                    className=" md:w-5/12 md:mr-6 shrink-0 w-3/4 m-auto"
+                    className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
                     src={huojian}
                     alt="computer"
                   ></Image>
