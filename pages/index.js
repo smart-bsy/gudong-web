@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import computer from "../public/images/computer.png";
-import computer3 from "../public/images/computer3.png";
 import huojian from "../public/images/huojian.png";
 import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
@@ -14,7 +13,7 @@ import { RxAvatar } from "react-icons/rx";
 
 export default function Home() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
   const [uploadElements, setUploadElements] = useState([]);
   const [fileList, setFileList] = useState([]);
@@ -24,8 +23,9 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(uploadElements.length);
-  }, [uploadElements]);
+    setFileList([]);
+    setUploadElements([getUploadImgEle()]);
+  }, [isUploadModalOpen]);
 
   function openLoginModalOpen(event) {
     event.preventDefault();
@@ -43,9 +43,7 @@ export default function Home() {
     setIsUploadModalOpen(true);
   }
 
-  function closeUploadModal(event) {
-    event.preventDefault();
-    console.log("close upload modal");
+  function closeUploadModal() {
     setIsUploadModalOpen(false);
   }
 
@@ -56,10 +54,14 @@ export default function Home() {
 
   function getUploadImgEle(previewImage) {
     return (
-      <div className=" mr-10 rounded-md" key={previewImage}>
+      <div className=" mr-10 rounded-md mt-10" key={previewImage}>
         {previewImage ? (
           <div>
-            <img src={previewImage} className=" w-44 h-44" alt="logo" />
+            <img
+              src={previewImage}
+              className=" rounded-md w-44 h-44"
+              alt="logo"
+            />
           </div>
         ) : (
           <>
@@ -69,8 +71,9 @@ export default function Home() {
               accept="image/*"
               type="file"
             />
-            <div className=" w-44 border-2 h-44  border-dashed flex flex-row justify-center items-center">
+            <div className=" w-44 h-44 border-4  border-dashed flex flex-col justify-center items-center">
               <AiOutlinePlus className=" text-5xl" />
+              <div className=" text-xl">最少2张，最多9张</div>
             </div>
           </>
         )}
@@ -80,8 +83,8 @@ export default function Home() {
 
   function fileUploadHandler(event) {
     // push element
-    if (fileList.length + 1 > 3) {
-      alert("最多3张");
+    if (fileList.length + 1 > 9) {
+      alert("最多9张");
       return;
     }
     fileList.push(event.target.files[0]);
@@ -91,7 +94,7 @@ export default function Home() {
       var imgURL = URL.createObjectURL(fileList[i]);
       ele.push(getUploadImgEle(imgURL));
     }
-    if (ele.length < 3) {
+    if (ele.length < 9) {
       ele.push(getUploadImgEle());
     }
     setFileList(fileList);
@@ -805,16 +808,21 @@ export default function Home() {
           style={{ "background-color": "rgba(221,221,221,0.8)" }}
           className=" fixed top-0 left-0 right-0 bottom-0 w-full  flex flex-col justify-center"
         >
-          <div className=" shadow-2xl relative w-5/6 m-auto bg-purple-500 opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-start p-8">
-            <div onClick={closeUploadModal} className=" absolute right-4 top-4">
-              <AiOutlineCloseCircle className=" text-5xl text-white" />
-            </div>
-            <label className="cursor-pointer flex flex-row ">
+          <div className=" shadow-2xl relative w-10/12 m-auto bg-white opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-start p-8">
+            <label className="cursor-pointer flex flex-row flex-wrap">
               {uploadElements}
             </label>
-            <button className=" mt-5 w-40 rounded-2xl border-2 py-1">
-              提交
-            </button>
+            <div className=" text-4xl">
+              <button className=" mt-5 w-40 rounded-2xl border-2 text-center py-1 inline-block">
+                提交
+              </button>
+              <buton
+                className=" ml-5 mt-5 w-40 rounded-2xl border-2 py-1 text-center inline-block"
+                onClick={closeUploadModal}
+              >
+                取消
+              </buton>
+            </div>
           </div>
         </div>
       )}
