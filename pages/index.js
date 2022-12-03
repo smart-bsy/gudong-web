@@ -73,7 +73,6 @@ export default function Home() {
             />
             <div className=" w-44 h-44 border-4  border-dashed flex flex-col justify-center items-center">
               <AiOutlinePlus className=" text-5xl" />
-              <div className=" text-xl">最少2张，最多9张</div>
             </div>
           </>
         )}
@@ -431,62 +430,19 @@ export default function Home() {
                       className=" mb-7 mt-10 rounded-md shadow-2xl border-gray-400 pb-5 text-black"
                     >
                       <div className=" font-bold p-5">
-                        3、请完成以下分享
+                        3、请完成以下操作
                         <span className=" font-bold text-purple-800">
                           （+100股）
                         </span>
                       </div>
-                      <div>
-                        <form action="">
-                          <div>
-                            <label className="">
-                              <p className=" p-5">
-                                请将以下内容分享至3个以上微信群，总人数达1000人以上并截图上传。
-                              </p>
-                              <div className=" mt-2 p-5 text-gray-700 ">
-                                <p className="  bg-blue-400">
-                                  一个即将打破阿里/京东等巨头垄断的新电商平台
-                                  (“咕咚”)
-                                  将于X日X点正式上线！本轮空投参与瓜分100万原始股份！限1万人，先到先得！
-                                  <a
-                                    href="https://www.gudong.shop/"
-                                    className=" text-blue-600 underline-offset-1"
-                                  >
-                                    https://www.gudong.shop/
-                                  </a>
-                                </p>
-                                <button className=" rounded-md flex flex-row justify-between bg-blue-400 text-white px-3 py-1 mt-8">
-                                  <svg
-                                    t="1669548772173"
-                                    class="icon"
-                                    viewBox="0 0 1024 1024"
-                                    version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    p-id="3657"
-                                    width="45"
-                                    height="45"
-                                    className="inline"
-                                  >
-                                    <path
-                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
-                                      p-id="3658"
-                                      fill="#ffffff"
-                                    ></path>
-                                    <path
-                                      d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
-                                      p-id="3659"
-                                      fill="#ffffff"
-                                    ></path>
-                                  </svg>
-                                  <span className=" shadow-2xl">复制</span>
-                                </button>
-                              </div>
-                              <button className=" shadow-2xl ml-5 mb-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
-                                上传截图
-                              </button>
-                            </label>
+                      <div className=" mt-2 p-5 text-gray-700 ">
+                        <p className=" bg-blue-400 text-center p-5">
+                          <div className=" font-bold">【待开放】</div>
+                          <div className=" text-red-800">
+                            （咕咚小程序/APP上线之日开放，预计2023年3月中旬）
                           </div>
-                        </form>
+                          <div> &#12288;</div>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -809,6 +765,7 @@ export default function Home() {
           className=" fixed top-0 left-0 right-0 bottom-0 w-full  flex flex-col justify-center"
         >
           <div className=" shadow-2xl relative w-10/12 m-auto bg-white opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-start p-8">
+            <div className=" text-3xl mt-5">( 最少2张，最多9张 )</div>
             <label className="cursor-pointer flex flex-row flex-wrap">
               {uploadElements}
             </label>
