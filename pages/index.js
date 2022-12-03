@@ -7,11 +7,10 @@ import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
 import longduan from "../public/images/longduan.png";
 import code from "../public/images/code.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
-import { Upload } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 
 export default function Home() {
@@ -20,49 +19,29 @@ export default function Home() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const [uploadElements, setUploadElements] = useState([]);
 
-  const handleChange = (info) => {
-    if (info.file.status === "uploading") {
-      setLoading(true);
-      return;
-    }
-    if (info.file.status === "done") {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, (url) => {
-        setLoading(false);
-        setImageUrl(url);
-      });
-    }
-  };
-
-  const getBase64 = (img, callback) => {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => callback(reader.result));
-    reader.readAsDataURL(img);
-  };
-  const beforeUpload = (file) => {
-    const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
-    if (!isJpgOrPng) {
-      message.error("You can only upload JPG/PNG file!");
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-      message.error("Image must smaller than 2MB!");
-    }
-    return isJpgOrPng && isLt2M;
-  };
-  const uploadButton = (
-    <div>
-      {loading ? <LoadingOutlined /> : <PlusOutlined />}
-      <div
-        style={{
-          marginTop: 8,
-        }}
-      >
-        Upload
+  function getUploadImgEle(previewImage) {
+    return (
+      <div className=" mr-10 rounded-md">
+        <input
+          onChange={fileUploadHandler}
+          className=" hidden"
+          accept="image/*"
+          type="file"
+        />
+        <div className=" w-44 border-2 h-44  border-dashed flex flex-row justify-center items-center">
+          <AiOutlinePlus className=" text-5xl" />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  useEffect(() => {
+    setUploadElements(() => {
+      return [getUploadImgEle()];
+    });
+  }, []);
 
   function openLoginModalOpen(event) {
     event.preventDefault();
@@ -89,6 +68,14 @@ export default function Home() {
   function loginHandle() {
     setIsLogin(true);
     setIsLoginModalOpen(false);
+  }
+
+  function fileUploadHandler(event) {
+    // get file
+    console.log(event.target.files[0]);
+    // push element
+    uploadElements.push(getUploadImgEle());
+    setUploadElements(uploadElements);
   }
 
   return (
@@ -169,7 +156,7 @@ export default function Home() {
                 <div className="">
                   <Image
                     className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
-                    src={computer3}
+                    src={computer}
                     alt="computer"
                   ></Image>
                 </div>
@@ -757,7 +744,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=" mb-40"></div>
+        <div className=" mb-10"></div>
       </div>
       {isLoginModalOpen && (
         <div
@@ -798,33 +785,16 @@ export default function Home() {
           style={{ "background-color": "rgba(221,221,221,0.8)" }}
           className=" fixed top-0 left-0 right-0 bottom-0 w-full  flex flex-col justify-center"
         >
-          <div className=" shadow-2xl relative w-4/6 m-auto bg-purple-500 opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-center">
+          <div className=" shadow-2xl relative w-4/6 m-auto bg-purple-500 opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-start p-8">
             <div onClick={closeUploadModal} className=" absolute right-4 top-4">
               <AiOutlineCloseCircle className=" text-5xl text-white" />
             </div>
-            <div>
-              <Upload
-                name="avatar"
-                listType="picture-card"
-                className="avatar-uploader"
-                showUploadList={false}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                beforeUpload={beforeUpload}
-                onChange={handleChange}
-              >
-                {imageUrl ? (
-                  <img
-                    src={imageUrl}
-                    alt="avatar"
-                    style={{
-                      width: "100%",
-                    }}
-                  />
-                ) : (
-                  uploadButton
-                )}
-              </Upload>
-            </div>
+            <label className="flex flex-col cursor-pointer">
+              <div className=" flex flex-row">{uploadElements}</div>
+              <button className=" mt-5 w-40 rounded-2xl border-2 py-1">
+                提交
+              </button>
+            </label>
           </div>
         </div>
       )}
