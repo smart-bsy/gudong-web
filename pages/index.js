@@ -795,17 +795,21 @@ export default function Home() {
               <AiOutlineCloseCircle className=" text-5xl text-white" />
             </div>
             <div className=" text-4xl w-11/12 flex flex-col justify-center items-center">
+              <RxAvatar className=" text-9xl mb-6" />
               <input
                 placeholder="请输入手机号"
-                className=" w-96 p-5 rounded-lg"
+                className="  w-[34rem] px-6 py-4 rounded-3xl"
               />
-              <div className=" mt-7 relative w-96">
-                <input placeholder="验证码" className=" w-96 p-5 rounded-lg" />
-                <div className=" absolute inline-block right-5 top-5 border-l-2 pl-5">
+              <div className=" mt-7 relative  w-[34rem]">
+                <input
+                  placeholder="验证码"
+                  className="  px-6 py-4 rounded-3xl w-[34rem] p-5"
+                />
+                <div className=" absolute inline-block right-6 top-4 border-l-2 pl-5">
                   <button>获取验证码</button>
                 </div>
               </div>
-              <div className=" text-center w-96 border-2 mt-7 p-3 rounded-lg text-white">
+              <div className=" text-center w-[34rem] border-2 mt-7 p-3 rounded-3xl text-white">
                 <button>登录</button>
               </div>
             </div>
