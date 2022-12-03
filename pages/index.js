@@ -7,8 +7,6 @@ import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
 import longduan from "../public/images/longduan.png";
 import code from "../public/images/code.png";
-import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { Upload } from "antd";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -17,34 +15,8 @@ import { RxAvatar } from "react-icons/rx";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
-  const [isLoginModalOpen, setIsModalOpen] = useState(true);
+  const [isLoginModalOpen, setIsModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-
-  const beforeUpload = (file) => {
-    const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
-    if (!isJpgOrPng) {
-      message.error("You can only upload JPG/PNG file!");
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-      message.error("Image must smaller than 2MB!");
-    }
-    return isJpgOrPng && isLt2M;
-  };
-
-  const handleChange = (info) => {
-    if (info.file.status === "uploading") {
-      setLoading(true);
-      return;
-    }
-    if (info.file.status === "done") {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, (url) => {
-        setLoading(false);
-        setImageUrl(url);
-      });
-    }
-  };
 
   function openLoginModalOpen() {
     setIsModalOpen(true);
@@ -55,18 +27,10 @@ export default function Home() {
     setIsModalOpen(false);
   }
 
-  const uploadButton = (
-    <div>
-      {loading ? <LoadingOutlined /> : <PlusOutlined />}
-      <div
-        style={{
-          marginTop: 8,
-        }}
-      >
-        Upload
-      </div>
-    </div>
-  );
+  function loginHandle() {
+    setIsLogin(true);
+    setIsModalOpen(false);
+  }
 
   return (
     <div>
@@ -79,22 +43,23 @@ export default function Home() {
         <div className=" md:w-3/4 m-auto flex flex-row  justify-between items-center">
           <Image className=" w-60 my-10 ml-6" src={logo} alt="logo"></Image>
           <div>
-            <div className=" mr-6 flex flex-row justify-between items-center">
+            <div className=" md:mr-1 mr-8 flex flex-row justify-between items-center">
               <div
                 // style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" rounded-md flex h-52 w-48   flex-col justify-center items-end"
+                className=" rounded-md flex h-52 flex-col justify-center items-center"
               >
                 <RxAvatar className=" text-8xl text-gray-400" />
-                <div hidden={!isLogin} className="  text-white mt-2">
-                  ID: 138****8256
-                </div>
-                <div hidden={!isLogin} className="  text-white mt-2">
-                  股份: xx
+                <div
+                  hidden={!isLogin}
+                  className="text-center text-2xl text-gray-400 font-bold"
+                >
+                  <div className=" mt-2">ID: GD99999</div>
+                  <div className=" mt-2">股份: xx</div>
                 </div>
                 <div
                   hidden={isLogin}
                   style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                  className=" bg-indigo-600 mt-5 rounded-md"
+                  className=" bg-indigo-600 mt-3 rounded-md"
                 >
                   <div
                     className=" w-full rounded-md"
@@ -102,7 +67,7 @@ export default function Home() {
                   >
                     <button
                       onClick={openLoginModalOpen}
-                      className="  px-2 text-4xl"
+                      className="  px-4 text-3xl"
                     >
                       登录
                     </button>
@@ -379,23 +344,6 @@ export default function Home() {
                                   <span>复制</span>
                                 </button>
                               </div>
-                              <div>
-                                <Upload
-                                  name="avatar"
-                                  listType="picture-card"
-                                  className="avatar-uploader mt-5 ml-6"
-                                  showUploadList={false}
-                                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                  beforeUpload={beforeUpload}
-                                  onChange={handleChange}
-                                >
-                                  {imageUrl ? (
-                                    <img src={imageUrl} alt="avatar" />
-                                  ) : (
-                                    uploadButton
-                                  )}
-                                </Upload>
-                              </div>
                               <button className=" mb-5 ml-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
                                 上传截图
                               </button>
@@ -460,23 +408,6 @@ export default function Home() {
                                   </svg>
                                   <span>复制</span>
                                 </button>
-                              </div>
-                              <div>
-                                <Upload
-                                  name="avatar"
-                                  listType="picture-card"
-                                  className="avatar-uploader mt-5 ml-6"
-                                  showUploadList={false}
-                                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                  beforeUpload={beforeUpload}
-                                  onChange={handleChange}
-                                >
-                                  {imageUrl ? (
-                                    <img src={imageUrl} alt="avatar" />
-                                  ) : (
-                                    uploadButton
-                                  )}
-                                </Upload>
                               </div>
                               <button className=" ml-5 mb-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3">
                                 上传截图
@@ -794,7 +725,7 @@ export default function Home() {
                 </div>
               </div>
               <div className=" bg-purple-400  text-center w-[34rem] border-2 mt-7 p-3 rounded-3xl text-white">
-                <button>登 录</button>
+                <button onClick={loginHandle}>登 录</button>
               </div>
             </div>
           </div>
