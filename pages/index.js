@@ -21,7 +21,7 @@ import { RxAvatar } from "react-icons/rx";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
-  const [isLoginModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsModalOpen] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
   const [menuToggle, setMenuToggle] = useState(false);
 
@@ -787,22 +787,25 @@ export default function Home() {
           style={{ "background-color": "rgba(221,221,221,0.4)" }}
           className=" fixed top-0 left-0 right-0 bottom-0 w-full  flex flex-col justify-center"
         >
-          <div className=" relative w-4/6 m-auto bg-indigo-700 py-10 rounded-md flex flex-col justify-center items-center pl-9">
+          <div className=" relative w-4/6 m-auto bg-indigo-700 py-10 rounded-md flex flex-col justify-center items-center">
             <div
               onClick={closeLoginModalOpen}
-              className=" absolute right-3 top-3"
+              className=" absolute right-4 top-4"
             >
               <AiOutlineCloseCircle className=" text-5xl text-white" />
             </div>
-            <div className=" text-4xl">
-              <input placeholder="请输入手机号" className=" p-5 rounded-lg" />
-              <div className=" mt-7 relative">
-                <input placeholder="验证码" className=" p-5 rounded-lg" />
-                <div className=" absolute inline-block right-6 top-5 border-l-2 pl-5">
+            <div className=" text-4xl w-11/12 flex flex-col justify-center items-center">
+              <input
+                placeholder="请输入手机号"
+                className=" w-96 p-5 rounded-lg"
+              />
+              <div className=" mt-7 relative w-96">
+                <input placeholder="验证码" className=" w-96 p-5 rounded-lg" />
+                <div className=" absolute inline-block right-5 top-5 border-l-2 pl-5">
                   <button>获取验证码</button>
                 </div>
               </div>
-              <div className=" text-center w-full border-2 mt-7 p-3 rounded-lg text-white">
+              <div className=" text-center w-96 border-2 mt-7 p-3 rounded-lg text-white">
                 <button>登录</button>
               </div>
             </div>
