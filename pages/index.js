@@ -809,7 +809,7 @@ export default function Home() {
             <div onClick={closeUploadModal} className=" absolute right-4 top-4">
               <AiOutlineCloseCircle className=" text-5xl text-white" />
             </div>
-            <label className="cursor-pointer flex flex-row">
+            <label className="cursor-pointer flex flex-row ">
               {uploadElements}
             </label>
             <button className=" mt-5 w-40 rounded-2xl border-2 py-1">
