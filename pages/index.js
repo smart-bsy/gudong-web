@@ -11,37 +11,21 @@ import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
-import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
-  const [imageUrl, setImageUrl] = useState();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [uploadElements, setUploadElements] = useState([]);
-
-  function getUploadImgEle(previewImage) {
-    return (
-      <div className=" mr-10 rounded-md">
-        <input
-          onChange={fileUploadHandler}
-          className=" hidden"
-          accept="image/*"
-          type="file"
-        />
-        <div className=" w-44 border-2 h-44  border-dashed flex flex-row justify-center items-center">
-          <AiOutlinePlus className=" text-5xl" />
-        </div>
-      </div>
-    );
-  }
+  const [fileList, setFileList] = useState([]);
 
   useEffect(() => {
-    setUploadElements(() => {
-      return [getUploadImgEle()];
-    });
+    setUploadElements([getUploadImgEle()]);
   }, []);
+
+  useEffect(() => {
+    console.log(uploadElements.length);
+  }, [uploadElements]);
 
   function openLoginModalOpen(event) {
     event.preventDefault();
@@ -70,12 +54,48 @@ export default function Home() {
     setIsLoginModalOpen(false);
   }
 
+  function getUploadImgEle(previewImage) {
+    return (
+      <div className=" mr-10 rounded-md" key={previewImage}>
+        {previewImage ? (
+          <div>
+            <img src={previewImage} className=" w-44 h-44" alt="logo" />
+          </div>
+        ) : (
+          <>
+            <input
+              onChange={fileUploadHandler}
+              className=" hidden"
+              accept="image/*"
+              type="file"
+            />
+            <div className=" w-44 border-2 h-44  border-dashed flex flex-row justify-center items-center">
+              <AiOutlinePlus className=" text-5xl" />
+            </div>
+          </>
+        )}
+      </div>
+    );
+  }
+
   function fileUploadHandler(event) {
-    // get file
-    console.log(event.target.files[0]);
     // push element
-    uploadElements.push(getUploadImgEle());
-    setUploadElements(uploadElements);
+    if (fileList.length + 1 > 3) {
+      alert("最多3张");
+      return;
+    }
+    fileList.push(event.target.files[0]);
+    const ele = [];
+    for (let i = 0; i < fileList.length; i++) {
+      var URL = window.URL || window.webkitURL;
+      var imgURL = URL.createObjectURL(fileList[i]);
+      ele.push(getUploadImgEle(imgURL));
+    }
+    if (ele.length < 3) {
+      ele.push(getUploadImgEle());
+    }
+    setFileList(fileList);
+    setUploadElements(ele);
   }
 
   return (
@@ -785,16 +805,16 @@ export default function Home() {
           style={{ "background-color": "rgba(221,221,221,0.8)" }}
           className=" fixed top-0 left-0 right-0 bottom-0 w-full  flex flex-col justify-center"
         >
-          <div className=" shadow-2xl relative w-4/6 m-auto bg-purple-500 opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-start p-8">
+          <div className=" shadow-2xl relative w-5/6 m-auto bg-purple-500 opacity-80 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-start p-8">
             <div onClick={closeUploadModal} className=" absolute right-4 top-4">
               <AiOutlineCloseCircle className=" text-5xl text-white" />
             </div>
-            <label className="flex flex-col cursor-pointer">
-              <div className=" flex flex-row">{uploadElements}</div>
-              <button className=" mt-5 w-40 rounded-2xl border-2 py-1">
-                提交
-              </button>
+            <label className="cursor-pointer flex flex-row">
+              {uploadElements}
             </label>
+            <button className=" mt-5 w-40 rounded-2xl border-2 py-1">
+              提交
+            </button>
           </div>
         </div>
       )}
