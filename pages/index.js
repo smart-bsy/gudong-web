@@ -13,7 +13,7 @@ import { RxAvatar } from "react-icons/rx";
 
 export default function Home() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(true);
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [uploadElements, setUploadElements] = useState([]);
   const [fileList, setFileList] = useState([]);
