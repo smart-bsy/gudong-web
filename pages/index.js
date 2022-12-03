@@ -787,7 +787,7 @@ export default function Home() {
           style={{ "background-color": "rgba(221,221,221,0.4)" }}
           className=" fixed top-0 left-0 right-0 bottom-0 w-full  flex flex-col justify-center"
         >
-          <div className=" relative w-4/6 m-auto bg-indigo-700 py-10 rounded-md flex flex-col justify-center items-center">
+          <div className=" shadow-2xl relative w-4/6 m-auto bg-purple-500 pb-7 pt-7 rounded-3xl flex flex-col justify-center items-center">
             <div
               onClick={closeLoginModalOpen}
               className=" absolute right-4 top-4"
@@ -795,7 +795,7 @@ export default function Home() {
               <AiOutlineCloseCircle className=" text-5xl text-white" />
             </div>
             <div className=" text-4xl w-11/12 flex flex-col justify-center items-center">
-              <RxAvatar className=" text-9xl mb-6" />
+              <RxAvatar className=" text-9xl mb-6 text-gray-300" />
               <input
                 placeholder="请输入手机号"
                 className="  w-[34rem] px-6 py-4 rounded-3xl"
@@ -809,8 +809,8 @@ export default function Home() {
                   <button>获取验证码</button>
                 </div>
               </div>
-              <div className=" text-center w-[34rem] border-2 mt-7 p-3 rounded-3xl text-white">
-                <button>登录</button>
+              <div className=" bg-purple-400  text-center w-[34rem] border-2 mt-7 p-3 rounded-3xl text-white">
+                <button>登 录</button>
               </div>
             </div>
           </div>
