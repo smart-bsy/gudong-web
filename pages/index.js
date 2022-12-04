@@ -17,6 +17,8 @@ export default function Home() {
   const [isLogin, setIsLogin] = useState(false);
   const [uploadElements, setUploadElements] = useState([]);
   const [fileList, setFileList] = useState([]);
+  const [timeInterval, setTimeInterval] = useState(0);
+  const [isForbidGetCode, setIsForbidGetCode] = useState(false);
 
   useEffect(() => {
     setUploadElements([getUploadImgEle()]);
@@ -100,6 +102,24 @@ export default function Home() {
     setUploadElements(ele);
   }
 
+  function getCode() {
+    // request code
+    setIsForbidGetCode(false);
+  }
+
+  useEffect(() => {
+    let timer = null;
+    if (!isForbidGetCode && timeInterval != 0) {
+      timer = setInterval(() => {
+        setTimeInterval(timeInterval - 1);
+      }, 1000);
+    } else {
+      setIsForbidGetCode(true);
+      setTimeInterval(60);
+    }
+    return () => clearInterval(timer);
+  }, [timeInterval, isForbidGetCode]);
+
   return (
     <div>
       <Head>
@@ -154,7 +174,7 @@ export default function Home() {
                              flex flex-col justify-between items-start
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                <div className=" md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     这是一场
                     <span className="font-bold text-5xl">真实的</span>
@@ -177,7 +197,7 @@ export default function Home() {
                 </div>
                 <div className="">
                   <Image
-                    className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
+                    className=" md:w-8/12 md:mr-6 shrink-0 m-auto"
                     src={computer}
                     alt="computer"
                   ></Image>
@@ -193,7 +213,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
+                <div className=" md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     咕咚平台主营
                     <span className="font-bold">年轻人</span>
@@ -205,7 +225,7 @@ export default function Home() {
                 </div>
                 <div className=" w-full">
                   <Image
-                    className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
+                    className=" md:w-9/12 md:mr-6 shrink-0 m-auto"
                     src={longduan}
                     alt="loongduan"
                   ></Image>
@@ -221,7 +241,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
+                <div className=" md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   咕咚平台有可能，在未来
                   <span className="font-bold">5年内</span>
                   ，超越阿里巴巴，甚至超越亚马逊，也就是: 市值将达
@@ -234,7 +254,7 @@ export default function Home() {
                 </div>
                 <div className=" w-full">
                   <Image
-                    className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
+                    className=" md:w-9/12 md:mr-6 shrink-0 m-auto"
                     src={huojian}
                     alt="computer"
                   ></Image>
@@ -250,7 +270,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-96 md:text-xl mt-5 md:text-center text-left text-white px-5 text-4xl">
+                <div className=" md:flex md:flex-col md:justify-center md:items-center md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     咕咚平台小程序与APP产品正在
                     <span className="font-bold">同步开发中</span>
@@ -258,13 +278,11 @@ export default function Home() {
                     <span className="font-bold text-fuchsia-400">“积分”</span>
                     的形式显示在平台上。
                   </p>
-                  <div className="">
-                    <Image
-                      className=" md:w-5/12 md:mr-6 shrink-0 m-auto"
-                      src={bin}
-                      alt="computer"
-                    ></Image>
-                  </div>
+                  <Image
+                    className=" md:w-5/12 shrink-0 m-auto"
+                    src={bin}
+                    alt="computer"
+                  ></Image>
                   <p className=" pb-5">
                     咕咚“积分”的总量固定为
                     <span className="font-bold">1亿份</span>
@@ -300,7 +318,7 @@ export default function Home() {
                 <div style={{ "background-color": "rgba(254,226,226,0.3)" }}>
                   <div className=" p-6 mr-6 w-full rounded-md text-black">
                     <div className=" pb-4 mb-4 border-gray-400 border-dashed">
-                      <p className="  font-bold text-start text-5xl">
+                      <p className="    font-bold text-start text-5xl">
                         <span className=" text-purple-800">
                           咕咚股份免费申请
                         </span>
@@ -436,13 +454,13 @@ export default function Home() {
                         </span>
                       </div>
                       <div className=" mt-2 p-5 text-gray-700 ">
-                        <p className=" bg-blue-400 text-center p-5">
+                        <div className=" bg-blue-400 text-center p-5">
                           <div className=" font-bold">【待开放】</div>
                           <div className=" text-red-800">
                             （咕咚小程序/APP上线之日开放，预计2023年3月中旬）
                           </div>
                           <div> &#12288;</div>
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -749,7 +767,13 @@ export default function Home() {
                   className="  px-6 py-4 rounded-3xl w-[34rem] p-5"
                 />
                 <div className=" absolute inline-block right-6 top-4 border-l-2 pl-5">
-                  <button>获取验证码</button>
+                  {isForbidGetCode ? (
+                    <button onClick={getCode}>获取验证码</button>
+                  ) : (
+                    <div className=" text-gray-500 text-center w-40">
+                      {timeInterval}s
+                    </div>
+                  )}
                 </div>
               </div>
               <div className=" bg-purple-400  text-center w-[34rem] border-2 mt-7 p-3 rounded-3xl text-white">
