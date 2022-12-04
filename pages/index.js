@@ -11,6 +11,7 @@ import styles from "../styles/Home.module.css";
 import { AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
 import { requestGetCode, requestLogin } from "../api";
+import { message } from "antd";
 
 export default function Home() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -117,6 +118,7 @@ export default function Home() {
       const resp = await requestGetCode(phone);
       console.log(resp);
       setIsForbidGetCode(false);
+      message.success("发送成功");
     } else {
       setIsPhoneValid(false);
     }
