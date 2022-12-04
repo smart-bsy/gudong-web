@@ -5,11 +5,12 @@ import huojian from "../public/images/huojian.png";
 import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
 import longduan from "../public/images/longduan.png";
-import code from "../public/images/code.png";
+import codeImg from "../public/images/code.png";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import { AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
+import { requestGetCode, requestLogin } from "../api";
 
 export default function Home() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -19,6 +20,11 @@ export default function Home() {
   const [fileList, setFileList] = useState([]);
   const [timeInterval, setTimeInterval] = useState(0);
   const [isForbidGetCode, setIsForbidGetCode] = useState(false);
+
+  const [phone, setPhone] = useState("");
+  const [isPhoneValid, setIsPhoneValid] = useState(true);
+  const [code, setCode] = useState("");
+  const [isCodeValid, setIsCodeValid] = useState(true);
 
   useEffect(() => {
     setUploadElements([getUploadImgEle()]);
@@ -36,7 +42,6 @@ export default function Home() {
 
   function closeLoginModalOpen(event) {
     event.preventDefault();
-    console.log("close");
     setIsLoginModalOpen(false);
   }
 
@@ -49,9 +54,13 @@ export default function Home() {
     setIsUploadModalOpen(false);
   }
 
-  function loginHandle() {
-    setIsLogin(true);
-    setIsLoginModalOpen(false);
+  async function loginHandle() {
+    if (phone.length == 11 && code.length == 4 && isPhoneValid && isCodeValid) {
+      const resp = await requestLogin({ phone, code });
+      console.log(resp);
+      setIsLogin(true);
+      setIsLoginModalOpen(false);
+    }
   }
 
   function getUploadImgEle(previewImage) {
@@ -102,9 +111,30 @@ export default function Home() {
     setUploadElements(ele);
   }
 
-  function getCode() {
+  async function getCode() {
     // request code
-    setIsForbidGetCode(false);
+    if (phone.length == 11 && isPhoneValid) {
+      const resp = await requestGetCode(phone);
+      console.log(resp);
+      setIsForbidGetCode(false);
+    } else {
+      setIsPhoneValid(false);
+    }
+  }
+
+  async function phoneChangeHandler(event) {
+    const val = event.target.value;
+    setPhone(event.target.value);
+    if (val.length > 11) {
+      setIsPhoneValid(false);
+      return;
+    } else {
+      setIsPhoneValid(true);
+    }
+  }
+
+  async function codeChangeHandler(event) {
+    setCode(event.target.value);
   }
 
   useEffect(() => {
@@ -174,30 +204,34 @@ export default function Home() {
                              flex flex-col justify-between items-start
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
-                  <p>
-                    这是一场
-                    <span className="font-bold text-5xl">真实的</span>
-                    社会实验
-                  </p>
-                  <p>
-                    中国将出现一个
-                    <span className="font-bold  text-5xl text-cyan-300">
-                      全新的
-                    </span>
-                    电子商务平台
-                  </p>
-                  <p className="">
-                    它的名字叫
-                    <span className="font-bold text-5xl text-fuchsia-400">
-                      {" "}
-                      咕咚！
-                    </span>
-                  </p>
+                <div className=" md:ml-6 md:w-[78rem] md:text-2xl mt-5 md:text-start text-left font-bold text-white px-5 text-4xl">
+                  <div className=" md:ml-7">
+                    <p>
+                      这是一场
+                      <span className="font-bold md:text-3xl text-5xl">
+                        真实的
+                      </span>
+                      社会实验
+                    </p>
+                    <p className=" md:ml-10 md:mt-3">
+                      中国将出现一个
+                      <span className="font-bold  md:text-3xl  text-5xl text-cyan-300">
+                        全新的
+                      </span>
+                      电子商务平台
+                    </p>
+                    <p className=" md:ml-20 md:mt-3">
+                      它的名字叫
+                      <span className="font-bold  md:text-3xl  text-5xl text-fuchsia-400">
+                        {" "}
+                        咕咚！
+                      </span>
+                    </p>
+                  </div>
                 </div>
-                <div className="">
+                <div className="w-full">
                   <Image
-                    className=" md:w-8/12 md:mr-6 shrink-0 m-auto"
+                    className=" md:w-9/12 md:mr-6 shrink-0 m-auto"
                     src={computer}
                     alt="computer"
                   ></Image>
@@ -213,8 +247,8 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
-                  <p>
+                <div className=" md:ml-6 md:w-[78rem] md:text-2xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                  <p className=" md:text-start md:font-normal leading-loose">
                     咕咚平台主营
                     <span className="font-bold">年轻人</span>
                     的消费品但有一点不一样，咕咚平台将会记录每一位用户在平台上所做的任何贡献（例如：邀请来好友或者买卖商品等），并将这些贡献直接转化成咕咚的
@@ -241,7 +275,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                <div className=" md:text-2xl md:pb-10 md:pt-5 md:text-start md:font-normal leading-loose md:ml-6 md:w-[78rem] mt-5 text-left font-bold text-white px-5 text-4xl">
                   咕咚平台有可能，在未来
                   <span className="font-bold">5年内</span>
                   ，超越阿里巴巴，甚至超越亚马逊，也就是: 市值将达
@@ -270,7 +304,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:flex md:flex-col md:justify-center md:items-center md:ml-6 md:w-[78rem] md:text-xl mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                <div className=" md:pb-10 md:mt-5 md:text-2xl md:font-normal md:flex md:flex-col md:justify-center md:items-start md:ml-6 md:w-[78rem] mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     咕咚平台小程序与APP产品正在
                     <span className="font-bold">同步开发中</span>
@@ -281,9 +315,9 @@ export default function Home() {
                   <Image
                     className=" md:w-5/12 shrink-0 m-auto"
                     src={bin}
-                    alt="computer"
+                    alt="bin"
                   ></Image>
-                  <p className=" pb-5">
+                  <p className=" text-start">
                     咕咚“积分”的总量固定为
                     <span className="font-bold">1亿份</span>
                     ，其中创始团队仅占比
@@ -307,7 +341,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className=" mt-10 rounded-md text-4xl">
+          <div className=" mt-10 rounded-md md:text-2xl text-4xl">
             <div class={styles.box}>
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
@@ -317,9 +351,9 @@ export default function Home() {
               >
                 <div style={{ "background-color": "rgba(254,226,226,0.3)" }}>
                   <div className=" p-6 mr-6 w-full rounded-md text-black">
-                    <div className=" pb-4 mb-4 border-gray-400 border-dashed">
-                      <p className="    font-bold text-start text-5xl">
-                        <span className=" text-purple-800">
+                    <div className=" md:pb-0 pb-4 mb-4 border-gray-400 border-dashed">
+                      <p className="font-bold text-start md:text-3xl text-5xl">
+                        <span className=" text-slate-700">
                           咕咚股份免费申请
                         </span>
                       </p>
@@ -331,7 +365,7 @@ export default function Home() {
                       style={{
                         "background-color": "rgba(254,226,226,0.3)",
                       }}
-                      className=" mt-10 rounded-md shadow-2xl border-gray-400 pb-5 text-black"
+                      className=" md:mt-5 mt-10 rounded-md shadow-2xl border-gray-400 pb-5 text-black"
                     >
                       <div className=" font-bold p-5">
                         1、请完成以下信息
@@ -339,9 +373,9 @@ export default function Home() {
                           （+50股）
                         </span>
                       </div>
-                      <div className=" p-5">
+                      <div className=" py-0 px-5">
                         <form action="">
-                          <div className=" mt-2 text-gray-700">
+                          <div className=" md:mt-0 mt-2 text-gray-700">
                             <label className=" block">
                               咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
                             </label>
@@ -352,14 +386,14 @@ export default function Home() {
                                 name="sex"
                                 value="male"
                               />
-                              <span className="text-4xl mr-16 px-3 ">买家</span>
+                              <span className="mr-16 px-3 ">买家</span>
                               <input
                                 className=" text-9xl"
                                 type="radio"
                                 name="sex"
                                 value="female"
                               />
-                              <span className="text-4xl px-3">卖家</span>
+                              <span className="px-3">卖家</span>
                               <button
                                 onClick={(event) => {
                                   event.preventDefault();
@@ -389,7 +423,7 @@ export default function Home() {
                         <form action="">
                           <div>
                             <label className="">
-                              <p className=" p-5">
+                              <p className=" py-0 px-5">
                                 请将以下内容分享至2个以上微信群，总人数达500人以上并截图上传。
                               </p>
                               <div className=" mt-2 p-5 text-gray-700 ">
@@ -453,8 +487,8 @@ export default function Home() {
                           （+100股）
                         </span>
                       </div>
-                      <div className=" mt-2 p-5 text-gray-700 ">
-                        <div className=" bg-blue-400 text-center p-5">
+                      <div className=" px-0 px-5  mt-2 pb-5 text-gray-700 ">
+                        <div className=" bg-blue-400 text-center p-5 backdrop-blur-3xl">
                           <div className=" font-bold">【待开放】</div>
                           <div className=" text-red-800">
                             （咕咚小程序/APP上线之日开放，预计2023年3月中旬）
@@ -472,7 +506,7 @@ export default function Home() {
             <div class={styles.box}>
               <div
                 style={{ "background-color": "rgba(254,226,226,0.3)" }}
-                className=" text-start text-white font-bold md:p-5 p-6 text-5xl "
+                className=" text-start text-white font-bold md:p-5 p-6 md:text-3xl text-5xl "
               >
                 咕咚平台路线图
               </div>
@@ -482,7 +516,7 @@ export default function Home() {
                              flex flex-col justify-between items-start  
                   shadow-2xl"
               >
-                <ol className="relative border-l text-4xl ml-10 mt-5 border-gray-200 dark:border-gray-700">
+                <ol className="relative border-l md:text-2xl text-4xl ml-10 mt-5 border-gray-200 dark:border-gray-700">
                   <li className="mb-10 ml-6">
                     <span className="flex absolute -left-3 justify-center items-center w-10 h-10 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                       <svg
@@ -522,7 +556,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-cyan-300 dark:text-white">
+                    <h3 className="mb-1 ml-7  font-bold text-cyan-300 dark:text-white">
                       小程序/app上线
                     </h3>
                     <p class="mb-4 ml-7  text-white dark:text-gray-400">
@@ -545,7 +579,7 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 ml-7 text-4xl  font-bold text-cyan-300 dark:text-white">
+                    <h3 className="mb-1 ml-7 font-bold text-cyan-300 dark:text-white">
                       盈利并开始分红
                     </h3>
                     <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
@@ -568,10 +602,10 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl  ml-7 font-bold text-cyan-300 dark:text-white">
+                    <h3 className="mb-1  ml-7 font-bold text-cyan-300 dark:text-white">
                       治理性NFT发布
                     </h3>
-                    <p class="mb-4 ml-7 text-4xl font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7 font-normal text-white dark:text-gray-400">
                       在此阶段，咕咚平台将推出基于Web3.0生态理念的新生物种——NFT（非同质化权益证明），为咕咚平台所有的原始股东及全生态用户提供一种全新的身份象征和权益证明，具体细则届时公布。
                     </p>
                   </li>
@@ -591,10 +625,10 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl ml-7  font-bold text-cyan-300 dark:text-white">
+                    <h3 className="mb-1  ml-7  font-bold text-cyan-300 dark:text-white">
                       在线化社区治理
                     </h3>
-                    <p class="mb-4 ml-7  text-4xl font-normal text-white dark:text-gray-400">
+                    <p class="mb-4 ml-7  font-normal text-white dark:text-gray-400">
                       在此阶段，咕咚平台所有的原始股东可参与咕咚平台的日常事务治理，例如：持有咕咚的股份或NFT即可在咕咚社区参与咕咚平台各种大小事务提案、投票等决策权益，咕咚平台将逐步实现多中心化治理。
                     </p>
                   </li>
@@ -614,10 +648,10 @@ export default function Home() {
                         ></path>
                       </svg>
                     </span>
-                    <h3 className="mb-1 text-4xl ml-7  font-bold text-cyan-300 dark:text-white">
+                    <h3 className="mb-1  ml-7  font-bold text-cyan-300 dark:text-white">
                       进入到上市程序
                     </h3>
-                    <p class="mb-4 text-4xl ml-7 font-normal text-white dark:text-gray-400">
+                    <p class="mb-4  ml-7 font-normal text-white dark:text-gray-400">
                       在此阶段，咕咚平台的各项数据达到上市标准并正式启动上市登记，咕咚平台上市成功时将对应当前的“积分”比例发行总量为1亿份的咕咚股票，届时持有咕咚积分（原始股份）的所有用户届可按同等比例兑换成咕咚的股票。
                     </p>
                   </li>
@@ -625,7 +659,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className=" mt-10 rounded-md text-4xl">
+          <div className=" mt-10 rounded-md md:text-2xl text-4xl">
             <div class={styles.box}>
               <div
                 style={{
@@ -635,13 +669,15 @@ export default function Home() {
                 <div
                   style={{ "background-color": "rgba(254,226,226,0.3)" }}
                   className=" md:flex md:justify-start md:items-start md:p-5
-                             flex flex-col justify-between items-center text-black p-6
+                             flex flex-col justify-between items-start text-black p-6
                   shadow-2xl"
                 >
-                  <p className=" font-bold text-5xl text-purple-800">
-                    Q&A 常见问题解答
-                  </p>
-                  <div className="  mt-6">
+                  <div className=" text-start">
+                    <p className="font-bold md:text-3xl text-5xl text-purple-800">
+                      Q&A 常见问题解答
+                    </p>
+                  </div>
+                  <div className=" mt-6">
                     <p className=" font-bold">Q: 本平台主营什么商品?</p>
                     <p className=" mt-1 ">
                       A:
@@ -708,12 +744,14 @@ export default function Home() {
                   shadow-2xl"
                 >
                   <div>
-                    <p className=" ml-5 font-bold mt-3 text-4xl">加入社群</p>
+                    <p className=" md:text-2xl ml-5 font-bold mt-3 text-4xl">
+                      加入社群
+                    </p>
                     <div className=" flex flex-row justify-start  mt-3 items-center">
                       <div>
                         <Image
                           className=" mx-5 w-20 rounded-md"
-                          src={code}
+                          src={codeImg}
                           alt="code"
                         ></Image>
                         <p className=" text-center mt-1">微信①群</p>
@@ -721,7 +759,7 @@ export default function Home() {
                       <div>
                         <Image
                           className=" mx-5 w-20 rounded-md"
-                          src={code}
+                          src={codeImg}
                           alt="code"
                         ></Image>
                         <p className=" text-center  mt-1">微信②群</p>
@@ -729,7 +767,7 @@ export default function Home() {
                       <div className=" text-center">
                         <Image
                           className=" mx-5 w-20 rounded-md"
-                          src={code}
+                          src={codeImg}
                           alt="code"
                         ></Image>
                         <p className=" text-center  mt-1">微信③群 </p>
@@ -760,11 +798,15 @@ export default function Home() {
               <input
                 placeholder="请输入手机号"
                 className="  w-[34rem] px-6 py-4 rounded-3xl"
+                value={phone}
+                onChange={phoneChangeHandler}
               />
               <div className=" mt-7 relative  w-[34rem]">
                 <input
                   placeholder="验证码"
                   className="  px-6 py-4 rounded-3xl w-[34rem] p-5"
+                  value={code}
+                  onChange={codeChangeHandler}
                 />
                 <div className=" absolute inline-block right-6 top-4 border-l-2 pl-5">
                   {isForbidGetCode ? (
@@ -775,6 +817,16 @@ export default function Home() {
                     </div>
                   )}
                 </div>
+                {!isPhoneValid && (
+                  <div className=" text-3xl text-red-800 mt-3">
+                    手机号码格式不正确
+                  </div>
+                )}
+                {!isCodeValid && (
+                  <div className=" text-3xl text-red-800 mt-3">
+                    验证码不正确
+                  </div>
+                )}
               </div>
               <div className=" bg-purple-400  text-center w-[34rem] border-2 mt-7 p-3 rounded-3xl text-white">
                 <button onClick={loginHandle}>登 录</button>
