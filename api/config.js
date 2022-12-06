@@ -1,18 +1,17 @@
 const axios = require("axios");
 
 const request = axios.create({
-  baseURL: "https://73b5-111-222-57-71.jp.ngrok.io",
-  timeout: 1000,
+  baseURL: "http://localhost:8080/gudong",
+  timeout: 5000,
 });
 
 const TOKEN = "authorize_token";
 
-axios.interceptors.request.use(
+request.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     const token = localStorage.getItem(TOKEN);
-    config.headers["Authorization"] = `Bearer ${token}`;
-    console.log(config);
+    config.headers["Authorization"] = `${token}`;
     return config;
   },
   function (error) {
@@ -25,7 +24,10 @@ request.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    return response;
+    if (response.headers["authorization"]) {
+      localStorage.setItem(TOKEN, response.headers["authorization"]);
+    }
+    return response.data;
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger

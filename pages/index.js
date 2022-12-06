@@ -6,12 +6,33 @@ import bin from "../public/images/bin.png";
 import logo from "../public/images/logo.png";
 import longduan from "../public/images/longduan.png";
 import codeImg from "../public/images/code.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { AiOutlineCloseCircle, AiOutlinePlus } from "react-icons/ai";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import {
+  AiOutlineCloseCircle,
+  AiOutlinePlus,
+  AiFillCheckCircle,
+  AiOutlineCheck,
+} from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
-import { requestGetCode, requestLogin } from "../api";
-import { message } from "antd";
+import {
+  requestCompleteTask1,
+  requestCompleteTask2,
+  requestGetCode,
+  requestGetTaskStatus,
+  requestGetUserInfo,
+  requestLogin,
+} from "../api";
+import toast, { Toaster } from "react-hot-toast";
+
+const TOKEN = "authorize_token";
+
+// todo : 替换 alert
+// todo : 当手机号小于11位的时候也要提示格式错误
+// tood : 配合 验证码 错误提示
+
+const copyVal = `一个即将打破阿里/京东等巨头垄断的新电商平台(“咕咚”)即将面世！本轮空投参与瓜分50万原始股份！限1万人，先到先得！`;
 
 export default function Home() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -22,19 +43,35 @@ export default function Home() {
   const [timeInterval, setTimeInterval] = useState(0);
   const [isForbidGetCode, setIsForbidGetCode] = useState(false);
 
+  const [account, setAccount] = useState();
+  const [userId, setUserId] = useState();
+  const [identify, setIdentify] = useState();
   const [phone, setPhone] = useState("");
   const [isPhoneValid, setIsPhoneValid] = useState(true);
   const [code, setCode] = useState("");
   const [isCodeValid, setIsCodeValid] = useState(true);
 
+  const [task1, setTask1] = useState();
+  const [task2, setTask2] = useState(false);
+  const [task3, setTask3] = useState(false);
+  const [coplied, setCoplied] = useState(false);
+
   useEffect(() => {
     setUploadElements([getUploadImgEle()]);
+    init();
   }, []);
 
   useEffect(() => {
     setFileList([]);
     setUploadElements([getUploadImgEle()]);
   }, [isUploadModalOpen]);
+
+  useEffect(() => {
+    if (coplied) {
+      toast.success("复制成功，快去分享吧！");
+      setCoplied(false);
+    }
+  }, [coplied]);
 
   function openLoginModalOpen(event) {
     event.preventDefault();
@@ -59,8 +96,34 @@ export default function Home() {
     if (phone.length == 11 && code.length == 4 && isPhoneValid && isCodeValid) {
       const resp = await requestLogin({ phone, code });
       console.log(resp);
-      setIsLogin(true);
-      setIsLoginModalOpen(false);
+      if (resp.code === 2000) {
+        toast.success("登录成功");
+        init();
+      } else {
+        console.log(resp);
+        console.log(resp.message);
+        toast.error("登录失败: " + resp.message);
+      }
+    }
+  }
+  async function init() {
+    const token = localStorage.getItem(TOKEN);
+    if (token) {
+      // get userInfo
+      let resp = await requestGetUserInfo();
+      if (resp.code == 2000) {
+        setAccount(resp.data.account);
+        setUserId(formatId(resp.data.id));
+        setIsLogin(true);
+        setIsLoginModalOpen(false);
+      }
+      resp = await requestGetTaskStatus();
+      console.log(resp);
+      if (resp.code == 2000) {
+        setTask1(resp.data.task1);
+        setTask2(resp.data.task2);
+        setTask3(resp.data.task3);
+      }
     }
   }
 
@@ -95,13 +158,14 @@ export default function Home() {
   function fileUploadHandler(event) {
     // push element
     if (fileList.length + 1 > 9) {
-      alert("最多9张");
+      toast.error("最多9张");
       return;
     }
     fileList.push(event.target.files[0]);
     const ele = [];
     for (let i = 0; i < fileList.length; i++) {
       var URL = window.URL || window.webkitURL;
+      console.log(fileList[0]);
       var imgURL = URL.createObjectURL(fileList[i]);
       ele.push(getUploadImgEle(imgURL));
     }
@@ -116,9 +180,13 @@ export default function Home() {
     // request code
     if (phone.length == 11 && isPhoneValid) {
       const resp = await requestGetCode(phone);
-      console.log(resp);
-      setIsForbidGetCode(false);
-      message.success("发送成功");
+      if (resp.code == 2000) {
+        setTimeInterval(60);
+        setIsForbidGetCode(true);
+        toast.success("发送成功");
+      } else {
+        toast.error("发送失败: " + resp.message);
+      }
     } else {
       setIsPhoneValid(false);
     }
@@ -136,18 +204,81 @@ export default function Home() {
   }
 
   async function codeChangeHandler(event) {
+    event.preventDefault();
     setCode(event.target.value);
+  }
+
+  async function identifyChangeHandler(event) {
+    setIdentify(event.target.value);
+  }
+
+  async function completetTask1(event) {
+    event.preventDefault();
+    if (!isLogin) {
+      toast.error("请先登录");
+      return;
+    }
+    if (!identify) {
+      toast.error("请选择身份");
+      return;
+    }
+    if ("卖家" != identify && "买家" != identify) {
+      toast.error("非法值");
+      return;
+    }
+    const resp = await requestCompleteTask1({ identify });
+    if (resp.code == 2000) {
+      await init();
+      toast.success("success", "股份+50");
+    } else {
+      toast.error("fail: " + resp.message);
+    }
+  }
+
+  async function completeTask2(event) {
+    event.preventDefault();
+    if (!isLogin) {
+      toast.error("请先登录");
+      return;
+    }
+    if (fileList.length < 2) {
+      toast.message("最少上传2张");
+      return;
+    }
+    if (fileList.length > 9) {
+      toast.message("最多上传9张");
+      return;
+    }
+    const resp = await requestCompleteTask2(fileList);
+    if (resp.code == 2000) {
+      await init();
+      toast.success("success", "股份+50");
+      setIsUploadModalOpen(false);
+    } else {
+      toast.error("upload fail: " + resp.message);
+    }
+  }
+
+  function formatId(id) {
+    const len = id.toString().length;
+    let ids = "GD";
+    for (let i = 0; i < 5 - len; i++) {
+      ids += "0";
+    }
+    ids += id.toString();
+    return ids;
   }
 
   useEffect(() => {
     let timer = null;
-    if (!isForbidGetCode && timeInterval != 0) {
-      timer = setInterval(() => {
-        setTimeInterval(timeInterval - 1);
-      }, 1000);
-    } else {
-      setIsForbidGetCode(true);
-      setTimeInterval(60);
+    if (isForbidGetCode) {
+      if (timeInterval > 0) {
+        timer = setInterval(() => {
+          setTimeInterval(timeInterval - 1);
+        }, 1000);
+      } else {
+        setIsForbidGetCode(false);
+      }
     }
     return () => clearInterval(timer);
   }, [timeInterval, isForbidGetCode]);
@@ -174,8 +305,8 @@ export default function Home() {
                 hidden={!isLogin}
                 className="text-center text-2xl text-gray-400 font-bold"
               >
-                <div>ID: GD99999</div>
-                <div>股份: xx</div>
+                <div>ID: {userId}</div>
+                <div>股份: {account}</div>
               </div>
               <div
                 hidden={isLogin}
@@ -306,7 +437,7 @@ export default function Home() {
                              flex flex-col justify-between items-center  
                   shadow-2xl"
               >
-                <div className=" md:pb-10 md:mt-5 md:text-2xl md:font-normal md:flex md:flex-col md:justify-center md:items-start md:ml-6 md:w-[78rem] mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
+                <div className=" pb-10 md:mt-5 md:text-2xl md:font-normal md:flex md:flex-col md:justify-center md:items-start md:ml-6 md:w-[78rem] mt-5 md:text-center text-left font-bold text-white px-5 text-4xl">
                   <p>
                     咕咚平台小程序与APP产品正在
                     <span className="font-bold">同步开发中</span>
@@ -353,7 +484,7 @@ export default function Home() {
               >
                 <div style={{ "background-color": "rgba(254,226,226,0.3)" }}>
                   <div className=" p-6 mr-6 w-full rounded-md text-black">
-                    <div className=" md:pb-0 pb-4 mb-4 border-gray-400 border-dashed">
+                    <div className=" pb-0 mb-4 border-gray-400 border-dashed">
                       <p className="font-bold text-start md:text-3xl text-5xl">
                         <span className=" text-slate-700">
                           咕咚股份免费申请
@@ -374,10 +505,13 @@ export default function Home() {
                         <span className=" font-bold text-purple-800">
                           （+50股）
                         </span>
+                        {task1 && (
+                          <AiFillCheckCircle className=" inline-block text-2xl text-green-600" />
+                        )}
                       </div>
                       <div className=" py-0 px-5">
                         <form action="">
-                          <div className=" md:mt-0 mt-2 text-gray-700">
+                          <div className=" md:mt-0">
                             <label className=" block">
                               咕咚平台上线后将主营年轻人的消费品，届时您主要是个买家还是卖家？
                             </label>
@@ -385,25 +519,29 @@ export default function Home() {
                               <input
                                 className=" ml-2 text-9xl"
                                 type="radio"
-                                name="sex"
-                                value="male"
+                                name="identify"
+                                value="买家"
+                                onChange={identifyChangeHandler}
+                                checked={task1 && task1 == "买家"}
                               />
                               <span className="mr-16 px-3 ">买家</span>
                               <input
                                 className=" text-9xl"
                                 type="radio"
-                                name="sex"
-                                value="female"
+                                name="identify"
+                                value="买家"
+                                onChange={identifyChangeHandler}
+                                checked={task1 && task1 == "卖家"}
                               />
                               <span className="px-3">卖家</span>
-                              <button
-                                onClick={(event) => {
-                                  event.preventDefault();
-                                }}
-                                className=" mt-5 block bg-indigo-500 px-3 py-1 shadow-2xl rounded-md text-white"
-                              >
-                                提 交
-                              </button>
+                              {!task1 && (
+                                <button
+                                  onClick={completetTask1}
+                                  className=" mt-5 block bg-indigo-500 px-3 py-1 shadow-2xl rounded-md text-white"
+                                >
+                                  提 交
+                                </button>
+                              )}
                             </div>
                           </div>
                         </form>
@@ -420,6 +558,9 @@ export default function Home() {
                         <span className=" font-bold text-purple-800">
                           （+50股）
                         </span>
+                        {task2 && (
+                          <AiFillCheckCircle className=" inline-block text-2xl text-green-600" />
+                        )}
                       </div>
                       <div>
                         <form action="">
@@ -440,38 +581,52 @@ export default function Home() {
                                     https://www.gudong.shop/
                                   </a>
                                 </p>
-                                <button className=" rounded-md flex flex-row justify-between bg-blue-400 text-white px-3 py-1 mt-8">
-                                  <svg
-                                    t="1669548772173"
-                                    class="icon"
-                                    viewBox="0 0 1024 1024"
-                                    version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    p-id="3657"
-                                    width="45"
-                                    height="45"
-                                    className="inline"
+                                <CopyToClipboard
+                                  text={copyVal}
+                                  onCopy={() => {
+                                    setCoplied(true);
+                                  }}
+                                >
+                                  <button
+                                    onClick={(event) => {
+                                      event.preventDefault();
+                                    }}
+                                    className=" rounded-md flex flex-row justify-between bg-blue-400 text-white px-3 py-1 mt-8"
                                   >
-                                    <path
-                                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
-                                      p-id="3658"
-                                      fill="#ffffff"
-                                    ></path>
-                                    <path
-                                      d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
-                                      p-id="3659"
-                                      fill="#ffffff"
-                                    ></path>
-                                  </svg>
-                                  <span className=" shadow-2xl">复制</span>
-                                </button>
+                                    <svg
+                                      t="1669548772173"
+                                      class="icon"
+                                      viewBox="0 0 1024 1024"
+                                      version="1.1"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      p-id="3657"
+                                      width="45"
+                                      height="45"
+                                      className="inline"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32z"
+                                        p-id="3658"
+                                        fill="#ffffff"
+                                      ></path>
+                                      <path
+                                        d="M704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM382 896h-0.2L232 746.2v-0.2h150v150z"
+                                        p-id="3659"
+                                        fill="#ffffff"
+                                      ></path>
+                                    </svg>
+                                    <span className=" shadow-2xl">复制</span>
+                                  </button>
+                                </CopyToClipboard>
                               </div>
-                              <button
-                                onClick={openUploadModal}
-                                className=" shadow-2xl mb-5 ml-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3"
-                              >
-                                上传截图
-                              </button>
+                              {!task2 && (
+                                <button
+                                  onClick={openUploadModal}
+                                  className=" shadow-2xl mb-5 ml-5 rounded-md block text-center bg-indigo-500 text-white px-3 py-1 mt-3"
+                                >
+                                  上传截图
+                                </button>
+                              )}
                             </label>
                           </div>
                         </form>
@@ -811,7 +966,7 @@ export default function Home() {
                   onChange={codeChangeHandler}
                 />
                 <div className=" absolute inline-block right-6 top-4 border-l-2 pl-5">
-                  {isForbidGetCode ? (
+                  {!isForbidGetCode ? (
                     <button onClick={getCode}>获取验证码</button>
                   ) : (
                     <div className=" text-gray-500 text-center w-40">
@@ -848,7 +1003,10 @@ export default function Home() {
               {uploadElements}
             </label>
             <div className=" text-4xl">
-              <button className=" mt-5 w-40 rounded-2xl border-2 text-center py-1 inline-block">
+              <button
+                onClick={completeTask2}
+                className=" mt-5 w-40 rounded-2xl border-2 text-center py-1 inline-block"
+              >
                 提交
               </button>
               <buton
@@ -861,6 +1019,9 @@ export default function Home() {
           </div>
         </div>
       )}
+      <div>
+        <Toaster />
+      </div>
     </div>
   );
 }

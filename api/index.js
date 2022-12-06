@@ -1,7 +1,7 @@
 import { request } from "./config";
 
 export const requestGetCode = async (phone) => {
-  return request.get(`/bus/getCode?phone=${phone}`);
+  return request.get(`/user/code?phone=${phone}`);
 };
 
 /**
@@ -11,23 +11,30 @@ export const requestGetCode = async (phone) => {
  * }
  */
 export const requestLogin = async (body) => {
-  return request.post("/bus/login", body);
+  return request.post("/user/login", body);
 };
 
 export const requestGetUserInfo = async () => {
-  return request.get(`/gudong/usesr`);
+  return request.get(`/user`);
 };
 
-export const requestPostForm1 = async (body) => {
-  return request.post("/gudong/form1", body);
+export const requestCompleteTask1 = async (body) => {
+  return request.post("/task/step1", body);
 };
 
-export const requestUploadScreenshot = async (fileList) => {
+export const requestCompleteTask2 = async (fileList) => {
   const formData = new FormData();
-  formData.append("files", fileList);
-  return request.post("/gudong/share/screenshot", formData, {
+  console.log(fileList);
+  fileList.forEach((file) => {
+    formData.append("files", file);
+  });
+  return request.post("/task/step2", formData, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
   });
+};
+
+export const requestGetTaskStatus = async () => {
+  return request.get("/task/status");
 };
