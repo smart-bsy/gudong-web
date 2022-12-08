@@ -1,0 +1,15 @@
+FROM bitnami/node
+
+MAINTAINER baisongyuan<coinchainweb3@163.com>
+
+WORKDIR /root/gudong-web
+
+COPY . /root/gudong-web
+
+EXPOSE 3000
+
+RUN npm install
+
+RUN npm run build
+
+ENTRYPOINT ["npm", "run","start"]
